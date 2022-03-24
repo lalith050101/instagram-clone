@@ -52,20 +52,20 @@ export class CreatePostComponent implements OnInit {
     }
 
     closeUpload(){
-      this.pauseVideo()
+      this.pauseVideo('pause')
       this.disableupload=false;
       this.isdiscard=true;
     }
 
     discardAll(){
-      this.pauseVideo()
+      this.pauseVideo('pause')
       this.isdiscard=false;
       this.disablechoose=false;
       this.disableupload=true;
     }
     
     closeDiscard(){
-      this.pauseVideo()
+      this.pauseVideo('play')
       this.isdiscard=false;
       this.disableupload=false;
       
@@ -76,15 +76,18 @@ export class CreatePostComponent implements OnInit {
       this.disablechoose=false;
     }
 
-    pauseVideo = function ( ) {
+    pauseVideo = function (s:string) {
       var iframe =document.querySelector( 'iframe');
       var video = document.querySelector( 'video' );
       if ( iframe ) {
         var iframeSrc = iframe.src;
         iframe.src = iframeSrc;
       }
-      if ( video ) {
+      if ( video &&s=='pause') {
         video.pause();
+      }
+      if( video && s=='play'){
+        video.play();
       }
     };
    onChange(event:any) {
