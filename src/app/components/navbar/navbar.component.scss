@@ -1,0 +1,75 @@
+.logo-img{
+    width: 100px;
+    height: 30px;
+    margin-left: 30px;
+}
+
+.navbar{
+    border-bottom: 1px solid gainsboro;
+    height: 60px;
+}
+
+.search-icon{
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    color: grey;
+}
+
+input[type="search"]{
+    background-color: #eeeeee;
+    border-radius: 10px;
+    width: 100%;
+    border: 0px;
+}
+
+.search-box{
+    position: relative;
+    margin-left: 230px;
+}
+
+input[type]::placeholder{
+    padding-left: 23px;
+}
+
+// .nav-link{
+//     width: 50px;
+//     height: 15px;
+// }
+
+.nav-link{
+    margin: 0px 4px;
+}
+
+.nav-link img{
+    width: 38px;
+    height: 33px;
+}
+
+.align-img{
+    margin-right: -4px;
+}
+
+.home{
+    margin-right: 10px;
+    width: 35px;
+    height: 33px;
+}
+
+.nav-link i{
+    font-size: 23px;
+    margin-top: 5px;
+    margin-right: 1px;
+    color: black;
+}
+
+.avatar img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    border: 1px solid black;
+}
+
+.navbar-collapse{
+    margin-left: 53px;
+}
