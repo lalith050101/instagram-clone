@@ -20,6 +20,7 @@ export class CreatePostComponent implements OnInit {
   isadvance=false;
   isdiscard=false;
 
+
   ngOnInit(): void {
   }
 
@@ -51,19 +52,23 @@ export class CreatePostComponent implements OnInit {
     }
 
     closeUpload(){
+      this.pauseVideo()
       this.disableupload=false;
       this.isdiscard=true;
     }
 
     discardAll(){
+      this.pauseVideo()
       this.isdiscard=false;
       this.disablechoose=false;
       this.disableupload=true;
     }
     
     closeDiscard(){
+      this.pauseVideo()
       this.isdiscard=false;
       this.disableupload=false;
+      
     }
     
     openChoose(){
@@ -71,6 +76,17 @@ export class CreatePostComponent implements OnInit {
       this.disablechoose=false;
     }
 
+    pauseVideo = function ( ) {
+      var iframe =document.querySelector( 'iframe');
+      var video = document.querySelector( 'video' );
+      if ( iframe ) {
+        var iframeSrc = iframe.src;
+        iframe.src = iframeSrc;
+      }
+      if ( video ) {
+        video.pause();
+      }
+    };
    onChange(event:any) {
 
     const file = event.target.files && event.target.files[0];
