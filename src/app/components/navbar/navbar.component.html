@@ -1,42 +1,151 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="col-sm-1"></div>
-    <a class="navbar-brand col-sm-1" href="/"><img class="logo-img" src="assets/Images/instalogo.png"/></a>
-    <div class=" col-sm-5">
-        <form class="form-inline my-2 my-lg-0 search-box">
-            <i class="material-icons search-icon">search</i><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        </form>
-    </div>
-    <div class="collapse navbar-collapse col-sm-4" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link home"><img src={{home}} (click) = "onHomeClick()"/><span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link align-img"><img src={{chat}} (click) = "onChatClick()"/><span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link"><i class={{square}} (click) = "onSquareClick()"></i><span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"><i class={{compass}} (click) = "onCompassClick()"></i></a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link"><i class={{heart}} (click) = "onHeartClick()"></i><span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/"><div class="avatar"><img src="assets/Images/avatar.jpg"/></div><span class="sr-only">(current)</span></a>
-          </li>
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
+  <div class="col-sm-1"></div>
+  <a class="navbar-brand col-sm-1" href="/"><img class="logo-img" src="assets/Images/instalogo.png"/></a>
+  <div class=" col-sm-5">
+      <form class="form-inline my-2 my-lg-0 search-box">
+          <i class="material-icons search-icon">search</i><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      </form>
+  </div>
+  <div class="collapse navbar-collapse col-sm-4" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link home"><img src={{home}} (click) = "onHomeClick()"/><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+          <a class="nav-link align-img"><img src={{chat}} (click) = "onChatClick()"/><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+          <a class="nav-link"><i class={{square}} (click) = "onSquareClick()"></i><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"><i class={{compass}} (click) = "onCompassClick()"></i></a>
+      </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" ><i class={{heart}} (click) = "onHeartClick()"></i></a>
+          <div class="dropdown-menu" id="heart-menu" aria-labelledby="dropdownMenuButton" >
+              <hr class="hr-left2">
+              <div id="arrow2"></div>
+              <hr class="hr-right2">
+              <a class="dropdown-item" href="#">
+                  <div class="row">
+                     
+                      <div class="col-sm-2">   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png" class="image"></div>
+                      <div class="col-sm-4">
+                          <p class="msg"><strong>Follow Requests</strong><br>lavishcart + 60 others</p>
+                      </div>
+                      <div class="col-sm-4"></div>
+                      <div class="col-sm-2">
+                          <div class="dot"><i class="fa fa-angle-right"></i></div>
+                      </div>
+                  </div>
+               
+
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                <h6>Yesterday</h6>
+                <div class="row">
+                   
+                    <div class="col-sm-2">   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png" class="image"></div>
+                    <div class="col-sm-4">
+                        <p class="msg" id="oneline"><strong>miss.ted_19</strong>&nbsp;started following you. 1D</p>
+                    </div>
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-3">
+                        <button class="btn btn-light" id="follow">Following</button>
+                    </div>
+                </div>
+            </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                <h6>This Month</h6>
+                <div class="row">
+                   
+                    <div class="col-sm-2">   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png" class="image"></div>
+                    <div class="col-sm-4">
+                        <p class="msg" id="oneline"><strong>inegenious_crafter14</strong>&nbsp;started following you. 6D</p>
+                    </div>
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-2">
+                        <button class="btn btn-primary">Follow</button>
+                    </div>
+                </div>
+            </a>
+            <a class="dropdown-item" href="#">
+              <div class="row">
+                 
+                  <div class="col-sm-2"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png" class="image"></div>
+                  <div class="col-sm-4">
+                      <p class="msg" id="oneline"><strong>miss.india</strong>&nbsp;liked your comment. 😂😂🤣😂</p>
+                  </div>
+                  <div class="col-sm-4"></div>
+                  <div class="col-sm-2">
+                    <img src="assets/Images/avatar.jpg" class="imagesq">
+                  </div>
+              </div>
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#">
+            <div class="row">
+               
+                <div class="col-sm-2"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png" class="image"></div>
+                <div class="col-sm-4">
+                    <p class="msg" id="oneline"><strong>Ms.Dhoni_124</strong>&nbsp;liked your comment. ❤😍💕</p>
+                </div>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-2">
+                  <img src="assets/Images/avatar.jpg" class="imagesq">
+                </div>
+            </div>
+        </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                <div class="row">
+                   
+                    <div class="col-sm-2"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png" class="image"></div>
+                    <div class="col-sm-4">
+                        <p class="msg" id="oneline"><strong>Vijay_124</strong>&nbsp;liked your comment. 😎😁✌</p>
+                    </div>
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-2">
+                      <img src="assets/Images/avatar.jpg" class="imagesq">
+                    </div>
+                </div>
+            </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                <div class="row">
+                   
+                  <div class="col-sm-2">   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png" class="image"></div>
+                  <div class="col-sm-4">
+                      <p class="msg" id="oneline"><strong>inegenious_crafter14</strong>&nbsp;started following you. 6D</p>
+                  </div>
+                  <div class="col-sm-4"></div>
+                  <div class="col-sm-2">
+                      <button class="btn btn-primary">Follow</button>
+                  </div>
+                </div>
+            </a>
+
           </div>
-        </li> -->
-      </ul>
-    </div>
-  </nav>
+      </li>
+        <li class="nav-item dropdown">
+
+          <a class="nav-link" data-toggle="dropdown" id="menu"><div class="avatar"><img (click) = "disableIcons()" src="assets/Images/avatar.jpg"/></div></a>
+          
+          <div class="dropdown-menu dropdown-menu2" aria-labelledby="menu" >
+              <hr class="hr-left">
+              <div id="arrow"></div>
+              <hr class="hr-right">
+              <a class="dropdown-item" href="#"><i class='far fa-user-circle'></i>Profile</a>
+              <a class="dropdown-item"  href="#"><i class="far fa-bookmark"></i>Saved</a>
+              <a class="dropdown-item" href="#"><i class="fas fa-cog"></i>Settings</a>
+              <a class="dropdown-item"  href="#"><i class="fa fa-refresh"></i>Switch Accounts</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item logout" href="#">Log Out</a>
+            </div>
+           
+      </li>
+      
+    </ul>
+  </div>
+</nav>

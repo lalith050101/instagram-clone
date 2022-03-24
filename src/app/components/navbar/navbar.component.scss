@@ -73,3 +73,153 @@ input[type]::placeholder{
 .navbar-collapse{
     margin-left: 53px;
 }
+
+.dropdown-menu2
+{
+    width:230px;
+    margin-left: -170px;
+   box-shadow: 1px 1px 5px gainsboro,-1px -1px 5px gainsboro;
+   border: none;
+   font-size: 14px;
+   position: relative;
+   
+}
+.dropdown-menu2 a 
+{
+    padding: 8px;
+}
+.dropdown-item i 
+{
+    margin-right: 14px;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.logout 
+{
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+#arrow 
+{
+    position: absolute;
+    right:24px;
+    top:-10px;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid rgb(255, 255, 255);
+    
+}
+.hr-right{
+  margin-left: 10px;
+  right:23px;
+    top:-21px;
+  position: absolute;
+  transform: rotate(42deg);
+  width:16px;
+}
+.hr-left{
+    margin-left: 10px;
+    right:35px;
+    top:-21px;
+    position: absolute;
+    transform: rotate(-42deg);
+    width:16px;
+  }
+
+#heart-menu{
+    width:530px;
+    height: 350px;
+    overflow-y: scroll;
+    margin-left: -440px;
+   box-shadow: 1px 1px 5px gainsboro,-1px -1px 5px gainsboro;
+   border: none;
+   font-size: 14px;
+}
+#follow
+{
+    border: 1px solid gray;
+    background-color: white;
+}
+
+.btn
+{
+   
+    font-weight: 800px;
+    padding: 3px 6px;
+}
+
+#oneline
+{
+    margin-top: 11px;
+
+}
+.image 
+{
+    width: 40px;
+    margin-right: 20px;
+}
+.imagesq
+{
+    width: 35px;
+    margin-right: 20px;
+}
+
+
+.msg 
+{
+    margin-left: -20px;
+}
+#arrow2
+{
+    position: absolute;
+    right:54px;
+    top:-10px;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid rgb(255, 255, 255);
+    
+}
+.hr-right2{
+  margin-left: 10px;
+  right:52px;
+    top:-21px;
+  position: absolute;
+  transform: rotate(42deg);
+  width:16px;
+}
+.hr-left2{
+    margin-left: 10px;
+    right:65px;
+    top:-21px;
+    position: absolute;
+    transform: rotate(-42deg);
+    width:16px;
+  }
+
+  .dot 
+  {
+      width: 10px;
+      height: 10px;
+      margin-top: 17px;
+      border-radius: 50%;
+      background-color: dodgerblue;
+  }
+  .dot i 
+  {
+      margin-left: 25px;
+      font-size: 24px;
+      color: gray;
+      margin-top: -28px;
+  }
+
+
+  .msg i 
+  {
+      color: rgb(255, 219, 58);
+  }
