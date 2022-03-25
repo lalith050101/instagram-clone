@@ -103,6 +103,8 @@ export class CreatePostComponent implements OnInit {
       }
       reader.onload = (event) => {
         this.url = (<FileReader>event.target).result;
+        console.log(this.url);
+        
       }
       this.disableupload=false;
       this.disablechoose=true;
