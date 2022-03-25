@@ -1,9 +1,9 @@
 export interface User {
-  id: string | any;
-  username: string | any;
-  name: string | any;
-  email: string | any;
-  password: string | any;
+  id: string ;
+  username: string;
+  name: string;
+  email: string;
+  password: string;
   posts?: [],
   comments?: []
 }
