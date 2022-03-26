@@ -60,7 +60,6 @@ export class CreatePostComponent implements OnInit {
     discardAll(){
       this.pauseVideo('pause')
       this.isdiscard=false;
-      this.disablechoose=false;
       this.disableupload=true;
     }
     

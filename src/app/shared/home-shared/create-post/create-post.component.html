@@ -20,7 +20,7 @@
                     <div class="choose-btn-wrapper">
                         <button class="btn" style="cursor: pointer;">Select from computer</button>
                         <input type="file" name="myfile" (change)="onChange($event)"/> 
-                      </div>
+                    </div>
                 </div>
             </div>
     
@@ -75,11 +75,12 @@
                                 <input type="text" placeholder="Add location">
                             </div>
                 
-                            <div class="accessbility" id="accessbility" (click)="showAccessbility()">
+                            <div class="accessbility" id="accessbility" >
                 
-                                <div class="top">
+                                <div class="top" (click)="showAccessbility()">
                                     <p>Accessbility</p>
                                     <p>
+                                        
                                         <i class="fa-solid fa-angle-down" [ngStyle]="{'display': isaccess ? 'none' : 'block' }"></i>
                                         <i class="fa-solid fa-angle-up" [ngStyle]="{'display': isaccess ? 'block' : 'none' }"></i>
                                     </p>
@@ -90,16 +91,16 @@
                                     <p class="flex">
                                         <img [src]="url" *ngIf="format==='image' && url"  width="40" height="42" >
                                         <video [src]="url" *ngIf="format==='video' && url" controls width="40" height="42"></video>
-                                        <input type="text" placeholder="Write alt text...">
+                                        <input class="alttext"type="text" placeholder="Write alt text...">
                                     </p>
                 
                                 </div>
                 
                             </div>
                 
-                            <div class="advancedsetting" (click)="showAdvanceSetting()">
+                            <div class="advancedsetting" >
                 
-                                <div class="top">
+                                <div class="top" (click)="showAdvanceSetting()">
                                     <p>Advanced Settings</p>
                                     <p>
                                         <i class="fa-solid fa-angle-down" [ngStyle]="{'display': isadvance ? 'none' : 'block' }"></i>
