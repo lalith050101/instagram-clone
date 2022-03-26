@@ -13,6 +13,7 @@
     background-color: rgba(0,0,0,0.5);
     z-index: 2;
     cursor: default;
+    overflow-x: scroll;
 }  
 
 #postview-section{
@@ -360,7 +361,7 @@
   @media only screen and (max-width: 800px) {
     #postview-section{
       position: absolute;
-      top: 50%;
+      top: 600px;
       left: 50%;
       width: 460px;
       height:auto;
@@ -385,7 +386,7 @@
       position: absolute;
       text-align: center;
       margin-left: 200px;
-      margin-top: 180px;
+      margin-top: 130px;
     }
     .comments{
       max-height: 300px;
