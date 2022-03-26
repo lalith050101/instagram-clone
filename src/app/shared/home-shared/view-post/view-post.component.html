@@ -10,7 +10,7 @@
           <div class="postview-conatiner">          
               
             <div class="postview-section">
-                <div class="postview-img-container">
+                <div class="postview-post-container">
                   <img [src]="url" *ngIf="format==='image' && url" >
                   <video [src]="url" *ngIf="format==='video' && url" controls  (click)="togglePlay()" autoplay></video>
                 </div>

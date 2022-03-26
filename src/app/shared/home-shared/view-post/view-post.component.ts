@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class ViewPostComponent implements OnInit {
 
   isdisablepostview:boolean=false;
-  url:any="assets/videos/video.mp4";
+  url:any="assets/videos/vertical.mp4";
   format:any;
   isdisablePause: boolean=true;
   isdisableaudio:boolean=false;
   ispostoption:boolean=false;
-  isuser:boolean=true;
+  isuser:boolean=false;
   video = document.querySelector('video');
   constructor() { }
 
