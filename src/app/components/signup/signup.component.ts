@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -18,7 +18,9 @@ export class SignupComponent implements OnInit {
     emailno:['',Validators.required],
     fullname:['',Validators.required],
     username:['',Validators.required],
-    password:['',Validators.required]
+    password:['',[Validators.required,Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*[@$!%*#?&]).{8,}$')]]
+  },{
+    validators:this.checkEmailorNum('emailno'),
   })
 
   myFunction() {
@@ -33,7 +35,7 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.signup.value.emailno)
+    //console.log(this.signup.value.emailno)
   }
 
   get emailno(){
@@ -50,5 +52,35 @@ export class SignupComponent implements OnInit {
 
   get password(){
     return this.signup.get('password');
+  }
+
+  checkEmailorNum(email:string){
+    return(fg:FormGroup) => {
+      const emailnum = fg.controls['emailno'];
+      const emailornum = fg.controls['emailno'].value;
+      let isnum = /^\+?[0-9 \.-]+$/.test(emailornum);
+      const regularExpression = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if(emailnum.errors && !emailnum.errors['notvalid']){
+        return
+      }
+      if(isnum)
+      {
+        if(emailornum.length !== 10)
+          emailnum.setErrors({notvalidnum: true});
+        else{
+          emailnum.setErrors(null);
+        }
+      }
+      else {
+        if(regularExpression.test(emailornum.toLowerCase()))
+        {
+          emailnum.setErrors(null);
+        }
+        else{
+          emailnum.setErrors({notvalidemail:true})
+        }
+      }
+      return
+    }
   }
 }

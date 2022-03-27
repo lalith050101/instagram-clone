@@ -1,319 +1,322 @@
-.logo-img{
-    width: 110px;
-    height: 30px;
-    margin-left: 30px;
-}
-
-.navbar{
-    padding-top: 7px;
-    border-bottom: 1px solid gainsboro;
-    height: 60px;
-}
-
-.search-icon{
-    position: absolute;
-    top: 8px;
-    left: 10px;
-    color: rgb(161, 161, 161);
-}
-
-input[type="search"]{
-    background-color: #eeeeee;
-    border-radius: 10px;
-    outline: none;
-    box-shadow: none;
-    width: 100%;
-    border: 0px;
-}
-
-.search-box{
-    position: relative;
-    margin-left: 230px;
-}
-
-input[type]::placeholder{
-    padding-left: 25px;
-    font-weight: lighter;
-}
-
-// .nav-link{
-//     width: 50px;
-//     height: 15px;
-// }
-
-.nav-link{
-    margin: 0px 4px;
-}
-
-.nav-link img{
-    width: 38px;
-    height: 33px;
+@media screen and (max-width:1400px) and (min-width:650px){
+    .logo-img{
+        width: 110px;
+        height: 30px;
+        margin-left: 30px;
+    }
     
-}
-
-.align-img{
-    margin-right: -4px;
-}
-
-.home{
-    margin-right: 10px;
-    width: 35px;
-    height: 33px;
-}
-
-.nav-link i{
-    font-size: 23px;
-    margin-top: 5px;
-    margin-right: 1px;
-    color: black;
-}
-
-.avatar img{
-    width: 25px;
-    height: 25px;
-    border-radius: 50px;
-    border: 1px solid black;
-}
-
-.navbar-collapse{
-    margin-left: 53px;
-}
-
-.dropdown-menu2
-{
-    width:230px;
-    margin-left: -170px;
-   box-shadow: 1px 1px 5px gainsboro,-1px -1px 5px gainsboro;
-   border: none;
-   font-size: 14px;
-   position: relative;
-   
-}
-.dropdown-menu2 a 
-{
-    padding: 8px;
-}
-.dropdown-item i 
-{
-    margin-right: 14px;
-    margin-left: 10px;
-    font-size: 16px;
-}
-
-.logout 
-{
-    font-size: 15px;
-    padding-left: 10px;
-}
-
-#arrow 
-{
-    position: absolute;
-    right:24px;
-    top:-10px;
-    width: 0;
-    height: 0;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-bottom: 12px solid rgb(255, 255, 255);
+    .navbar{
+        padding-top: 7px;
+        border-bottom: 1px solid gainsboro;
+        height: 60px;
+        background-color: white;
+    }
     
-}
-.hr-right{
-  margin-left: 10px;
-  right:23px;
-    top:-21px;
-  position: absolute;
-  transform: rotate(42deg);
-  width:16px;
-}
-.hr-left{
-    margin-left: 10px;
-    right:35px;
-    top:-21px;
-    position: absolute;
-    transform: rotate(-42deg);
-    width:16px;
-  }
-
-#heart-menu{
-    width:530px;
-    height: 350px;
-    padding: 12px;
-    overflow-y: scroll;
-    margin-left: -440px;
-   box-shadow: 1px 1px 5px gainsboro,-1px -1px 5px gainsboro;
-   border: none;
-   font-size: 14px;
-}
-
-#searchdropdownmenu{
-    width:360px;
-    height: 340px;
-    margin-top: 13px;
-    padding: 13px;
-   box-shadow: 1px 1px 5px gainsboro,-1px -1px 5px gainsboro;
- 
-   border: none;
-   margin-left: -60px;
-   font-size: 14px;
-}
-#searchdropdownmenu ul{
-    width: 100%;
-}
-.srimage 
-{
-    height:40px;
-    width: 40px;
-    border-radius: 50%;
-    border: none;
-    margin-top: 10px;
-}
-
-.descmain
-{
-    font-weight: 590;
-    font-size: 13px;
-}
-.desc1 
-{
-    color: gray;
-}
-
-#follow
-{
-    border: 1px solid gray;
-    background-color: white;
-}
-
-.btn
-{
-   
-    font-weight: 800px;
-    padding: 3px 6px;
-}
-
-#oneline
-{
-    margin-top: 11px;
-
-}
-.image 
-{
-    width: 40px;
-    margin-right: 20px;
-}
-.imagesq
-{
-    width: 35px;
-    margin-right: 20px;
-}
-
-
-.msg 
-{
-    margin-left: -20px;
-}
-#arrow2
-{
-    position: absolute;
-    right:54px;
-    top:-10px;
-    width: 0;
-    height: 0;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-bottom: 12px solid rgb(255, 255, 255);
+    .search-icon{
+        position: absolute;
+        top: 8px;
+        left: 10px;
+        color: rgb(161, 161, 161);
+    }
     
-}
-.hr-right2{
-  margin-left: 10px;
-  right:52px;
-    top:-21px;
-  position: absolute;
-  transform: rotate(42deg);
-  width:16px;
-}
-.hr-left2{
-    margin-left: 10px;
-    right:65px;
-    top:-21px;
-    position: absolute;
-    transform: rotate(-42deg);
-    width:16px;
-  }
-
-  .dot 
-  {
-      width: 10px;
-      height: 10px;
-      margin-top: 17px;
-      border-radius: 50%;
-      background-color: dodgerblue;
-  }
-  .dot i 
-  {
-      margin-left: 25px;
-      font-size: 24px;
-      color: gray;
-      margin-top: -28px;
-  }
-
-
-  .msg i 
-  {
-      color: rgb(255, 219, 58);
-  }
-
-  #arrow3
-{
-    position: absolute;
-    right:170px;
-    top:-10px;
-    width: 0;
-    height: 0;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-bottom: 12px solid rgb(255, 255, 255);
+    input[type="search"]{
+        background-color: #eeeeee;
+        border-radius: 10px;
+        outline: none;
+        box-shadow: none;
+        width: 100%;
+        border: 0px;
+    }
     
-}
-.hr-right3{
-  margin-left: 10px;
-  right:170px;
-    top:-22px;
-  position: absolute;
-  transform: rotate(42deg);
-  width:16px;
-}
-.hr-left3{
-    margin-left: 10px;
-    right:181px;
-    top:-22px;
-    position: absolute;
-    transform: rotate(-42deg);
-    width:16px;
-  }
-
-#clear
-{
-    color:#0095f6;
-    font-weight: 550px;
-}
-
-.dropdown-item .row .col-sm-2
-{
-    margin-left: -20px;
-}
-.dropdown-item .row .col-sm-1 i
-{
-   margin-top: 18px;
-   margin-right:-20px;
-   font-size: 24px;
-   color: gray;
-}
-
-.dropdown-item .row .col-sm-8
-{
-   margin-top: 10px;
-   margin-left: 8px;
-  
+    .search-box{
+        position: relative;
+        margin-left: 230px;
+    }
+    
+    input[type]::placeholder{
+        padding-left: 25px;
+        font-weight: lighter;
+    }
+    
+    // .nav-link{
+    //     width: 50px;
+    //     height: 15px;
+    // }
+    
+    .nav-link{
+        margin: 0px 4px;
+    }
+    
+    .nav-link img{
+        width: 38px;
+        height: 33px;
+        
+    }
+    
+    .align-img{
+        margin-right: -4px;
+    }
+    
+    .home{
+        margin-right: 10px;
+        width: 35px;
+        height: 33px;
+    }
+    
+    .nav-link i{
+        font-size: 23px;
+        margin-top: 5px;
+        margin-right: 1px;
+        color: black;
+    }
+    
+    .avatar img{
+        width: 25px;
+        height: 25px;
+        border-radius: 50px;
+        border: 1px solid black;
+    }
+    
+    .navbar-collapse{
+        margin-left: 53px;
+    }
+    
+    .dropdown-menu2
+    {
+        width:230px;
+        margin-left: -170px;
+       box-shadow: 1px 1px 5px gainsboro,-1px -1px 5px gainsboro;
+       border: none;
+       font-size: 14px;
+       position: relative;
+       
+    }
+    .dropdown-menu2 a 
+    {
+        padding: 8px;
+    }
+    .dropdown-item i 
+    {
+        margin-right: 14px;
+        margin-left: 10px;
+        font-size: 16px;
+    }
+    
+    .logout 
+    {
+        font-size: 15px;
+        padding-left: 10px;
+    }
+    
+    #arrow 
+    {
+        position: absolute;
+        right:24px;
+        top:-10px;
+        width: 0;
+        height: 0;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-bottom: 12px solid rgb(255, 255, 255);
+        
+    }
+    .hr-right{
+      margin-left: 10px;
+      right:23px;
+        top:-21px;
+      position: absolute;
+      transform: rotate(42deg);
+      width:16px;
+    }
+    .hr-left{
+        margin-left: 10px;
+        right:35px;
+        top:-21px;
+        position: absolute;
+        transform: rotate(-42deg);
+        width:16px;
+      }
+    
+    #heart-menu{
+        width:530px;
+        height: 350px;
+        padding: 12px;
+        overflow-y: scroll;
+        margin-left: -440px;
+       box-shadow: 1px 1px 5px gainsboro,-1px -1px 5px gainsboro;
+       border: none;
+       font-size: 14px;
+    }
+    
+    #searchdropdownmenu{
+        width:360px;
+        height: 340px;
+        margin-top: 13px;
+        padding: 13px;
+       box-shadow: 1px 1px 5px gainsboro,-1px -1px 5px gainsboro;
+     
+       border: none;
+       margin-left: -60px;
+       font-size: 14px;
+    }
+    #searchdropdownmenu ul{
+        width: 100%;
+    }
+    .srimage 
+    {
+        height:40px;
+        width: 40px;
+        border-radius: 50%;
+        border: none;
+        margin-top: 10px;
+    }
+    
+    .descmain
+    {
+        font-weight: 590;
+        font-size: 13px;
+    }
+    .desc1 
+    {
+        color: gray;
+    }
+    
+    #follow
+    {
+        border: 1px solid gray;
+        background-color: white;
+    }
+    
+    .btn
+    {
+       
+        font-weight: 800px;
+        padding: 3px 6px;
+    }
+    
+    #oneline
+    {
+        margin-top: 11px;
+    
+    }
+    .image 
+    {
+        width: 40px;
+        margin-right: 20px;
+    }
+    .imagesq
+    {
+        width: 35px;
+        margin-right: 20px;
+    }
+    
+    
+    .msg 
+    {
+        margin-left: -20px;
+    }
+    #arrow2
+    {
+        position: absolute;
+        right:54px;
+        top:-10px;
+        width: 0;
+        height: 0;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-bottom: 12px solid rgb(255, 255, 255);
+        
+    }
+    .hr-right2{
+      margin-left: 10px;
+      right:52px;
+        top:-21px;
+      position: absolute;
+      transform: rotate(42deg);
+      width:16px;
+    }
+    .hr-left2{
+        margin-left: 10px;
+        right:65px;
+        top:-21px;
+        position: absolute;
+        transform: rotate(-42deg);
+        width:16px;
+      }
+    
+      .dot 
+      {
+          width: 10px;
+          height: 10px;
+          margin-top: 17px;
+          border-radius: 50%;
+          background-color: dodgerblue;
+      }
+      .dot i 
+      {
+          margin-left: 25px;
+          font-size: 24px;
+          color: gray;
+          margin-top: -28px;
+      }
+    
+    
+      .msg i 
+      {
+          color: rgb(255, 219, 58);
+      }
+    
+      #arrow3
+    {
+        position: absolute;
+        right:170px;
+        top:-10px;
+        width: 0;
+        height: 0;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-bottom: 12px solid rgb(255, 255, 255);
+        
+    }
+    .hr-right3{
+      margin-left: 10px;
+      right:170px;
+        top:-22px;
+      position: absolute;
+      transform: rotate(42deg);
+      width:16px;
+    }
+    .hr-left3{
+        margin-left: 10px;
+        right:181px;
+        top:-22px;
+        position: absolute;
+        transform: rotate(-42deg);
+        width:16px;
+      }
+    
+    #clear
+    {
+        color:#0095f6;
+        font-weight: 550px;
+    }
+    
+    .dropdown-item .row .col-sm-2
+    {
+        margin-left: -20px;
+    }
+    .dropdown-item .row .col-sm-1 i
+    {
+       margin-top: 18px;
+       margin-right:-20px;
+       font-size: 24px;
+       color: gray;
+    }
+    
+    .dropdown-item .row .col-sm-8
+    {
+       margin-top: 10px;
+       margin-left: 8px;
+      
+    }
 }

@@ -2,6 +2,10 @@
     margin-top: 35px;
 }
 
+.row{
+    width: 100%;
+}
+
 .display{
     display:flex;
     justify-content: center;
@@ -13,14 +17,18 @@
     box-shadow: 2px 2px 2px gainsboro;
 }
 
+.leftanimation{
+    padding: 10px;
+}
+
 .leftanimation .background{
     position: relative;
 }
 
 .leftanimation .scroll{
     position: absolute;
-    top:63px;
-    left: 380px;
+    top:28px;
+    left: 170px;
     height: 538.83px;
     width: 250px;
 }
@@ -34,7 +42,8 @@
 }
 
 input{
-    width: 290px;
+    // width: 290px;
+    width: 100%;
     font-size: 11px;
     height: 40px;
     background-color: #fafafa;
@@ -216,4 +225,12 @@ input:focus{
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .text {font-size: 11px}
+}
+
+@media screen  and (max-width:1000px){
+    .leftanimation{
+        visibility: hidden;
+        width: 0%;
+        height: 0%;
+    }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
+  
+  signin = this.fb.group({
+    username:['',Validators.required],
+    password: ['',[Validators.required,Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*[@$!%*#?&]).{8,}$')]]
+  })
+
+  onSubmit(){
+  }
+
+  get username(){
+    return this.signin.get('username');
+  }
+
+  get password(){
+    return this.signin.get('password');
+  }
   
   showhide:string = "Show"
   slideIndex = 0;
