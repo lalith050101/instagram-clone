@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { UserService } from 'src/app/core/services/user/user.service';
+import { UserForm } from 'src/app/core/interfaces/user/user-form';
+import { ToastNotificationService } from 'src/app/core/services/toaster/toast-notification.service';
 
 @Component({
   selector: 'app-signup',
@@ -8,7 +11,7 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private userService: UserService, private toasterService: ToastNotificationService) { }
 
   showhide:string = "Show"
   ngOnInit(): void {
@@ -35,7 +38,38 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(){
-    //console.log(this.signup.value.emailno)
+
+    this.userService.isUser(this.signup.get('username')?.value).subscribe((data)=>{
+      if(data){
+        this.toasterService.showWarning("User Already Exists","Try Again")
+      }else{
+        this.userService.createUser({email: this.signup.get('emailno')?.value,
+        name: this.signup.get('fullname')?.value,
+        username: this.signup.get('username')?.value,
+        password: this.signup.get('password')?.value}).subscribe(
+          () => {
+            this.toasterService.showSuccess("Hello! You have Successfully Signed up","User Created Successfully")
+          } 
+        )
+      }
+    })
+    // if(!this.userService.isUser(this.signup.get('username')?.value)){
+    //   this.userService.createUser({email: this.signup.get('emailno')?.value,
+    //     name: this.signup.get('fullname')?.value,
+    //     username: this.signup.get('username')?.value,
+    //     password: this.signup.get('password')?.value}).subscribe(
+    //       () => {
+    //         this.toasterService.showSuccess("Hello! You have Successfully Signed up","Hi")
+    //       } 
+    //     )
+    // }else{
+    //   this.toasterService.showWarning("Hello","HI")
+    // }
+
+    // console.log(isUser())
+    // this.userService.isUser(this.signup.get('username')?.value).subscribe((data)=>{
+    //   console.log(data)
+    // })
   }
 
   get emailno(){
