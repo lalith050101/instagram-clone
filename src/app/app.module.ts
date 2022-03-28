@@ -13,6 +13,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { HomeSharedModule } from './shared/home-shared/home-shared.module';
+
 import { ExploreComponent } from './main/explore/explore.component';
 
 import { HomeComponentComponent } from './main/home/home-component/home-component.component';
@@ -46,6 +49,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
   imports: [
     BrowserModule,
+    HomeSharedModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     IvyCarouselModule,
