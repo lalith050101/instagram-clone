@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {UserForm} from "../../interfaces/user/user-form";
 import {User} from "../../interfaces/user/user";
-import {catchError, map, observable, Observable, tap} from "rxjs";
-import {FileUploadService} from "../media/file-upload.service";
-import {FileUpload} from "../../models/file-upload";
+import {map, Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
