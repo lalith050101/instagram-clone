@@ -3,6 +3,8 @@ import {HttpClient} from "@angular/common/http";
 import {UserForm} from "../../interfaces/user/user-form";
 import {User} from "../../interfaces/user/user";
 import {catchError, map, observable, Observable, tap} from "rxjs";
+import {FileUploadService} from "../media/file-upload.service";
+import {FileUpload} from "../../models/file-upload";
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +24,8 @@ export class UserService {
           id: key,
           username: data[key].username,
           email: data[key].email,
-          password: data[key].password,
-          name: data[key].name
+          name: data[key].name,
+          profile: data[key].profile
         }
         users.push(temp);
       })
@@ -32,6 +34,7 @@ export class UserService {
   }
 
   createUser( user: UserForm): Observable<any> {
+    user.posts = false;
     return this.http.post(this.baseURL + 'users.json', user);
   }
 
@@ -46,6 +49,16 @@ export class UserService {
     return this.getUsers().pipe(
       map((users: User[]) => users.find( ( user: User ) => username === user.username))
     );
+  }
+
+  getUserWithId( id: string): Observable<any> {
+    return this.getUsers().pipe(
+      map( (users: User[]) => users.find( (user: User ) => id === user.id))
+    );
+  }
+
+  uploadProfilePic( userId: string, url: string): Observable<any> {
+    return this.http.patch(`${this.baseURL}/users/${userId}.json`, { profile: url  });
   }
 
 }

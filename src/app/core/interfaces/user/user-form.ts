@@ -3,4 +3,5 @@ export interface UserForm {
   name: string;
   username: string;
   password: string;
+  posts?: boolean;
 }
