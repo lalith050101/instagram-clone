@@ -1,3 +1,11 @@
+nav {
+    background-color: white;
+}
+
+a {
+    cursor: pointer;
+}
+
 .logo-img{
     width: 110px;
     height: 30px;
@@ -104,6 +112,7 @@ input[type]::placeholder{
 {
     font-size: 15px;
     padding-left: 10px;
+    cursor: pointer;
 }
 
 #arrow 

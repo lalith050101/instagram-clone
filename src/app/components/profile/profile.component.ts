@@ -16,4 +16,8 @@ export class ProfileComponent implements OnInit {
   showPost(){
     this.postservice.showPost();
   }
+
+  getUser() {
+    return JSON.parse(localStorage.getItem('user')!);
+  }
 }

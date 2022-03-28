@@ -9,8 +9,9 @@
      
         <div class="col-sm-5" id="col5">
             <div class="row">
+                <div class="col-sm-1"></div>
                 <div class="col-sm-7">
-                    <p id="heading">motivational_quotes</p>
+                    <p id="heading">{{getUser().username}}</p>
                 </div>
                 <div class="col-sm-3">
                     <button class="btn btn-md" id="editprofile">Edit Profile</button>
@@ -32,7 +33,7 @@
              <div class="bio row">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-10">
-                    <h6>Motivational Quotes</h6>
+                    <h6>{{getUser().name}}</h6>
                     <h6 id="desc">Entrepreneur</h6>
                     <p>💥👉Follow me as your Daily Motivation &</p>
                     <p>Transform your life👈💥</p>

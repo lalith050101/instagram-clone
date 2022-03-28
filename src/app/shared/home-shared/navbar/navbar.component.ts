@@ -93,6 +93,11 @@ export class NavbarComponent implements OnInit {
       this.heart = "far fa-heart"
   }
   
+  logout() {
+    localStorage.removeItem('user');
+    this.router.navigateByUrl('login');
+  }
+
   ngOnInit(): void {
   }
 
