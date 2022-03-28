@@ -1,0 +1,264 @@
+@media screen and (max-width:1400px) and (min-width:650px){
+    .logo-img{
+        width: 110px;
+        height: 30px;
+        margin-left: 30px;
+    }
+    
+    .navbar{
+        padding-top: 7px;
+        border-bottom: 1px solid gainsboro;
+        height: 60px;
+        background-color: white;
+    }
+    
+    .search-icon{
+        position: absolute;
+        top: 8px;
+        left: 10px;
+        color: rgb(161, 161, 161);
+    }
+    
+    input[type="search"]{
+        background-color: #eeeeee;
+        border-radius: 10px;
+        outline: none;
+        box-shadow: none;
+        width: 100%;
+        border: 0px;
+    }
+    
+}
+.hr-right3{
+  margin-left: 10px;
+  right:170px;
+    top:-22px;
+  position: absolute;
+  transform: rotate(42deg);
+  width:16px;
+}
+.hr-left3{
+    margin-left: 10px;
+    right:181px;
+    top:-22px;
+    position: absolute;
+    transform: rotate(-42deg);
+    width:16px;
+  }
+
+#clear
+{
+    color:#0095f6;
+    font-weight: 550px;
+}
+
+.dropdown-item .row .col-sm-2
+{
+    margin-left: -20px;
+}
+.dropdown-item .row .col-sm-1 i
+{
+   margin-top: 18px;
+   margin-right:-20px;
+   font-size: 24px;
+   color: gray;
+}
+
+.dropdown-item .row .col-sm-8
+{
+   margin-top: 10px;
+   margin-left: 8px;
+  
+}
+
+
+//media queries
+
+
+@media only screen and (max-width: 426px) {
+
+    nav #col1
+    {
+        display: none;
+    }
+
+    .logo-img{
+        width:100px;
+        margin-left: -2px;
+        height: 30px;
+    }
+    
+    .navbar{
+        border-bottom: 1px solid gainsboro;
+        height:50px;
+    }
+    
+    #searchDiv 
+    {
+        display: none;
+    }
+    
+    #navbarSupportedContent
+    {
+        width: 240px;
+        display: inline-block;
+        margin-top: -47px;
+        margin-left: 120px;
+    }
+
+    #navbarSupportedContent ul 
+    {
+        display: inline-block;
+        height: 50px;
+    }
+
+    #navbarSupportedContent ul li 
+    {
+        float: left;
+    }
+
+    .nav-link img{
+        width: 31px;
+        height: 31px;
+        
+    }
+    
+    .nav-link i{
+        font-size: 23px;
+        margin-top: 5px;
+        margin-right: 9px;
+        color: black;
+    }
+    
+    .avatar img{
+        width: 25px;
+        height: 25px;
+        border-radius: 50px;
+        border: 1px solid black;
+    }
+    
+    .navbar-collapse{
+        margin-left:0px;
+    }
+
+    .align-img{
+        margin-right: 10px;
+    }
+    
+    .home{
+        margin-right:9px;
+        width: 28px;
+        height: 28px;
+    }
+.dropdown-menu2 a 
+{
+    padding: 8px;
+}
+.dropdown-item i 
+{
+    margin-right: 14px;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.logout 
+{
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+#arrow 
+{
+    position: absolute;
+    right:12px;
+    top:-10px;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid rgb(255, 255, 255);
+    
+}
+.hr-right{
+  margin-left: 10px;
+  right:12px;
+    top:-21px;
+  position: absolute;
+  transform: rotate(42deg);
+  width:16px;
+}
+.hr-left{
+    margin-left: 10px;
+    right:22px;
+    top:-21px;
+    position: absolute;
+    transform: rotate(-42deg);
+    width:16px;
+  }
+
+  #heart-menu{
+    width:200px;
+    box-shadow: 1px 1px 5px gainsboro,-1px -1px 5px gainsboro;
+    border: none;
+    font-size: 14px;
+    position: relative;
+}
+
+#arrow2
+{
+    // position: absolute;
+    // right:54px;
+    // top:-10px;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid rgb(255, 255, 255);
+    
+}
+.hr-right2{
+//   margin-left: 10px;
+//   right:52px;
+//     top:-21px;
+//   position: absolute;
+  transform: rotate(42deg);
+  width:16px;
+}
+.hr-left2{
+    // margin-left: 10px;
+    // right:65px;
+    // top:-21px;
+    position: absolute;
+    transform: rotate(-42deg);
+    width:16px;
+  }
+
+.dropdown-item .row .col-sm-2
+{
+    margin-left: 0px;
+}
+.dropdown-item .row .col-sm-1 i
+{
+   margin-top: 18px;
+   margin-right:0px;
+   font-size: 24px;
+   color: gray;
+}
+
+.dropdown-item .row .col-sm-8
+{
+   margin-top: 10px;
+   margin-left: 0px;
+  
+}
+.dropdown-menu2
+{
+    width:200px;
+   box-shadow: 1px 1px 5px gainsboro,-1px -1px 5px gainsboro;
+   border: none;
+   font-size: 14px;
+   position: relative;
+   
+}
+
+  }
