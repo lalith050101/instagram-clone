@@ -13,7 +13,7 @@
       background-color: rgba(0,0,0,0.5);
       z-index: 2;
       cursor: default;
- 
+      overflow-y: scroll;
   }  
   #choose-section{
       position: absolute;
@@ -433,24 +433,68 @@
   }
 
   @media only screen and (max-width: 800px) {
+    #discard-section{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 350px;
+      height: 220px;
+      background-color:#fff;
+      transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+      border-radius: 15px;
+      cursor:default;
+    }
+    #choose-section{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 360px;
+      height: 490px;
+      background-color:#fff;
+      transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+      border-radius: 15px;
+      cursor:default;
+  }
+
+  .btn {
+    border: 2px solid #0095f6;
+    color: #fff;
+    background-color: #0095f6;
+    padding: 8px 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-left: 90px;
+    font-weight: 550;
+  }
+  .choose-heading{
+    display: flex;
+    justify-content: center;
+    font-weight: 200;
+    font-size: 20px;
+    cursor: auto;
+}
+  
       #upload-section{
         position: absolute;
-        top: 50%;
+        top: 65%;
         left: 50%;
-        right: 50%;
-        width: 450px;
+        right: 100px;
+        width: 350px;
         height: auto;
         background-color:#fff;
         transform: translate(-50%,-50%);
         -ms-transform: translate(-50%,-50%);
         border-radius: 15px;
         cursor:default;
+       
     }
 
     .upload-img-container {
       float: left;
       width:100%;
-      height:auto;
+      height:300px;
       margin-top: -9px;
       border-radius: 0px;
       overflow: hidden;
@@ -480,6 +524,8 @@
       max-height: auto;
       overflow-y: scroll;
       border-radius:0px 0px 15px 0px;
+      overflow-x: hidden;
+      
     }
   }
 
