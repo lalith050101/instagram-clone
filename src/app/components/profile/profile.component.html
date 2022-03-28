@@ -1,11 +1,11 @@
 <div class="container-fluid" id="profileDiv">
     <div class="row">
         <div class="col-sm-2"></div>
-        <div class="col-sm-2">
+        <div class="col-sm-2" id="col2">
             <img src="assets/Images/profileIcon.png" alt="profileicon" id="profile">
         </div>
      
-        <div class="col-sm-5">
+        <div class="col-sm-5" id="col5">
             <div class="row">
                 <div class="col-sm-7">
                     <p id="heading">motivational_quotes</p>
@@ -56,7 +56,7 @@
                     </li>
                     <li class="list-inline-item">
                         <img src="assets/Images/high2.jpg">
-                         <p>moment📸</p>
+                         <p>moment</p>
                     </li>
                     <li class="list-inline-item">
                         <img src="assets/Images/high3.jpg">
@@ -64,11 +64,11 @@
                     </li>
                     <li class="list-inline-item">
                         <img src="assets/Images/high4.jpg">
-                        <p>family😍</p>
+                        <p>family</p>
                     </li>
                     <li class="list-inline-item">
                         <img src="assets/Images/high5.jpg">
-                        <p>Music ❣</p>
+                        <p>Music</p>
                     </li>
                    
                 </ul>
@@ -77,6 +77,12 @@
         </div>
     </div>
 
+    <!--media query followers-->
+    <ul class="nav nav-tabs" id="followlist">
+        <div class="col-sm-4"><span id="dark">1,230</span><br> posts</div>
+        <div class="col-sm-4"><span id="dark">2M</span><br> followers</div>
+        <div class="col-sm-4"><span id="dark">1.5M</span> <br>following</div>
+    </ul>
     <!--post section-->
     
     <div class="row">
@@ -87,13 +93,13 @@
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                    
                     <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="material-icons">grid_on</i>POSTS</a>
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="material-icons">grid_on</i><span id="word">POSTS</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="saved-tab" data-toggle="tab" href="#save" role="tab" aria-controls="save" aria-selected="false"><i class="far fa-bookmark"></i> SAVED</a>
+                        <a class="nav-link" id="saved-tab" data-toggle="tab" href="#save" role="tab" aria-controls="save" aria-selected="false"><i class="far fa-bookmark"></i> <span id="word">SAVED</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><i class='far fa-id-badge'></i> TAGGED</a>
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><i class='far fa-id-badge'></i><span id="word">TAGGED</span></a>
                     </li>
                   
             
@@ -400,10 +406,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-4 overlayclass">
-                                <video width="400" controls>
-                                    <source src="assets/Images/tag2.mp4" type="video/mp4">
-                                    Your browser does not support HTML5 video.
-                                  </video>
+                                <img src="assets/Images/tag1.jpg" class="img-responsive">
                                 <div class="overlay">
                                     <div class="text">
                                         <i class='fas fa-heart'></i> 2,400 &nbsp;&nbsp;
