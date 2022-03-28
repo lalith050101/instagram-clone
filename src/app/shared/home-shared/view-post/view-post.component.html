@@ -1,7 +1,7 @@
 <div class="main-content">
     
   <div class="overlay" [ngStyle]="{'display': isdisablepostview ? 'none' : 'block' }">
-      <div class="close-overlay" >
+      <div class="close-overlay" (click)="hidePost()">
         <i class="fa-solid fa-xmark"></i>
       </div>
 
@@ -12,9 +12,9 @@
             <div class="postview-section">
                 <div class="postview-post-container">
                   <img [src]="url" *ngIf="format==='image' && url" >
-                  <video [src]="url" *ngIf="format==='video' && url" controls  (click)="togglePlay()" autoplay></video>
+                  <video [src]="url" *ngIf="format==='video' && url" controls  (click)="togglePlay()" ></video>
                 </div>
-                <div class="videopause-icon" *ngIf="format=='video' && url && isdisablePause" >
+                <div class="videopause-icon" *ngIf="format=='video' && url && !isdisablePause" >
                   <i class="fa-solid fa-play"></i>
                 </div>
                 <!-- <div class="icons">
@@ -32,7 +32,7 @@
               <div class="comment-section">
                   <div class="profile-header">
                     <p>
-                      <img src="assets/images/profile.PNG">
+                      <img src="../../../../assets/Images/profile.PNG">
                       <span class="profile-leftside">
                         <span>ganapathyda</span>
                         <span [ngStyle]="{'display':isuser?'none':'block'}">
@@ -47,7 +47,7 @@
                       
                           <div class="comment-container">
                               <div class="user-img">
-                                <img src="../../../../assets/images/profile.PNG" > 
+                                <img src="../../../../assets/Images/profile.PNG" > 
                               </div>
                               <div class="other-content">
                                 <span class="username">ganapathyda</span>

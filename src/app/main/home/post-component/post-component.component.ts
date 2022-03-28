@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostService } from 'src/app/core/services/post/post.service';
 
 @Component({
   selector: 'app-post-component',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostComponentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private postservice:PostService) { }
 
   ngOnInit(): void {
   }
 
+  postView(){
+    console.log("called postView");
+    
+    this.postservice.showPost();
+  }
 }

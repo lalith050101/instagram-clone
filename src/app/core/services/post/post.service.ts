@@ -16,6 +16,9 @@ export class PostService {
   private hidecreatepost = new BehaviorSubject<boolean>(true);
   hidepost = this.hidecreatepost.asObservable();
 
+  private viewpost = new BehaviorSubject<boolean>(true);
+  showpostData = this.viewpost.asObservable();
+
 
 
   private baseURL: string = 'https://instagram-clone-ui-1f83e-default-rtdb.firebaseio.com/'
@@ -40,5 +43,9 @@ export class PostService {
 
   showCreatePost(){
       this.hidecreatepost.next(false);
+  }
+
+  showPost(){
+    this.viewpost.next(false)
   }
 }

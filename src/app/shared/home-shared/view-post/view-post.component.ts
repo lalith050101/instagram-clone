@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostService } from 'src/app/core/services/post/post.service';
 
 @Component({
   selector: 'app-view-post',
@@ -7,20 +8,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewPostComponent implements OnInit {
 
-  isdisablepostview:boolean=false;
+  isdisablepostview:boolean=true;
+
   url:any="assets/videos/vertical.mp4";
+
   format:any;
-  isdisablePause: boolean=true;
+  isdisablePause: boolean=false;
   isdisableaudio:boolean=false;
   ispostoption:boolean=false;
   isuser:boolean=false;
   video = document.querySelector('video');
-  constructor() { }
+  constructor(private postservice:PostService) {
+    this.viewPost();
+   }
 
   ngOnInit(): void {
+    // this.viewPost();
+    this.isdisablepostview=true;
+ 
     this.checkFormat();
   }
+  viewPost() {
+    this.postservice.showpostData.subscribe((data)=>{
 
+      this.isdisablepostview=data;
+      console.log(data);
+    })
+    
+  }
+
+  
   checkFormat(){
     const file = this.url;
     this.format='video';
@@ -29,14 +46,19 @@ export class ViewPostComponent implements OnInit {
     }
   }
 
+  hidePost(){
+    if(this.isdisablepostview==false){
+      this.pauseVideo('pause');
+      this.isdisablePause=false;
+      this.isdisablepostview=true;
+    }
+  }
     togglePlay(){
      if(this.isdisablePause){
        this.isdisablePause=false;
-       this.video?.play;
        console.log(this.isdisablePause);
      }else if(this.isdisablePause==false){
-       this.video?.pause;
-       this.isdisablePause=true;
+      this.isdisablePause=true;
        console.log(this.isdisablePause);
      }
   }
@@ -48,14 +70,21 @@ export class ViewPostComponent implements OnInit {
   closeOption(){
     this.ispostoption=false;
   }
-  // toggleAudio(){
-  //   if(this.isdisableaudio){
-  //       this.video?.muted;
-  //       alert("hi")
-  //   }else if(this.isdisableaudio==false){
-  //     this.video?.play
-  //   }
-  // }
+
+  pauseVideo = function (s:string) {
+    var iframe =document.querySelector( 'iframe');
+    var video = document.querySelector( 'video' );
+    if ( iframe ) {
+      var iframeSrc = iframe.src;
+      iframe.src = iframeSrc;
+    }
+    if ( video &&s=='pause') {
+      video.pause();
+    }
+    if( video && s=='play'){
+      video.play();
+    }
+  };
 
   
       

@@ -11,7 +11,7 @@
     right: 0;
     bottom: 0;
     background-color: rgba(0,0,0,0.5);
-    z-index: 2;
+    z-index: 9999;
     cursor: default;
     overflow-y: scroll;
 }  
@@ -207,7 +207,7 @@
 
 .like-detail-icon{
   width: 45%;
-  margin-top: -15px;
+  margin-top: 0px;
   font-size: 25px;
   display: flex;
   .left{
