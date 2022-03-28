@@ -25,6 +25,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ToastrModule } from 'ngx-toastr';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @NgModule({
@@ -33,7 +34,12 @@ import { ToastrModule } from 'ngx-toastr';
     HomeComponentComponent,
     PostComponentComponent,
     StoryComponentComponent,
-    SuggestionComponentComponent
+    SuggestionComponentComponent,
+    SignupComponent,
+    FooterComponent,
+    LoginComponent,
+    ProfileComponent,
+    NavbarComponent
   ],
 
   imports: [
@@ -42,10 +48,6 @@ import { ToastrModule } from 'ngx-toastr';
     AppRoutingModule,
     IvyCarouselModule,
     NgbModule,
-    SignupComponent,
-    FooterComponent,
-    LoginComponent,
-    ProfileComponent,
     HttpClientModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
