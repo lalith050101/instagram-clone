@@ -29,8 +29,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ToastrModule } from 'ngx-toastr';
-import { NavbarComponent } from './components/navbar/navbar.component';
-
 
 @NgModule({
   declarations: [
@@ -43,8 +41,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     SignupComponent,
     FooterComponent,
     LoginComponent,
-    ProfileComponent,
-    NavbarComponent
+    ProfileComponent
   ],
 
   imports: [

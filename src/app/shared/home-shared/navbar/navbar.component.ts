@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PostService } from 'src/app/core/services/post/post.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private postservice:PostService,private router:Router) { }
 
   home: string = "assets/Images/home3.png";
   chat: string = "assets/Images/emptychat.png";
@@ -24,6 +26,8 @@ export class NavbarComponent implements OnInit {
     }else{
       this.home = "assets/Images/home3.png"
     }
+
+    this.router.navigateByUrl('/home');
   }
 
   onChatClick(){
@@ -49,6 +53,10 @@ export class NavbarComponent implements OnInit {
     }else{
       this.square = "far fa-plus-square"
     }
+
+
+    this.postservice.showCreatePost();
+
   }
 
   onCompassClick(){
@@ -61,6 +69,8 @@ export class NavbarComponent implements OnInit {
     }else{
       this.compass = "far fa-compass"
     }
+
+    this.router.navigateByUrl('/explore');
   }
 
   onHeartClick(){

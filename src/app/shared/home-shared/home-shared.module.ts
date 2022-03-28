@@ -2,17 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 @NgModule({
   declarations: [
-    CreatePostComponent
+    CreatePostComponent,
+    NavbarComponent
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   exports:[
-    CreatePostComponent
+    CreatePostComponent,
+    NavbarComponent
   ]
 })
 export class HomeSharedModule { }
