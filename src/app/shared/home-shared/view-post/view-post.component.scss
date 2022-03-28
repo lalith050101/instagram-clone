@@ -13,7 +13,7 @@
     background-color: rgba(0,0,0,0.5);
     z-index: 2;
     cursor: default;
-    overflow-x: scroll;
+    overflow-y: scroll;
 }  
 
 #postview-section{
@@ -205,13 +205,12 @@
   }
 }
 
-.allicons{
+.like-detail-icon{
   width: 45%;
   margin-top: -15px;
   font-size: 25px;
   display: flex;
   .left{
-    // padding-left: 20px;
     justify-content: flex-start;
     span{
       padding-left: 15px;
@@ -363,7 +362,7 @@
       position: absolute;
       top: 600px;
       left: 50%;
-      width: 460px;
+      width: 380px;
       height:auto;
       background-color:#fff;
       transform: translate(-50%,-50%);
@@ -404,9 +403,42 @@
       border-bottom: 1px solid #dbdbdb;
     }
     
-    .allicons{
-      width: 100%;
+    .user-like-detail{
+      margin-top: -7px;
+      .img{
+        img{
+          // margin-top: -15px;
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          border-radius: 100%;
+         
+        }
+      }
+      .likedby{
+        font-size: 13px;
+        margin-left: 80px;
+          .username{
+            font-weight: bold;
+          }
+          .likecount{
+            font-weight: bold;
+          }
+      } 
     }
+    .like-detail-icon{
+      // width: ;
+      .left{
+        display: flex;
+        float: left;
+      }
+      .right{
+        display: flex;
+        margin-left: 220px;
+        float:right;
+      }
+    }
+    
     
     .uploadedtime{
       margin-left: 20px;
@@ -420,4 +452,24 @@
       
     }
     
+    .img1{
+
+      margin-left: 10px;
+    
+    }
+    .img2{
+      
+      margin-left: 20px;
+    
+    }
+    .img3{
+     
+      margin-left: 36px;
+     
+    }
+    .likedby{
+      font-size: 15px;
+      margin-left: 10px;
+    } 
+
   }
