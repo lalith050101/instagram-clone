@@ -32,7 +32,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ExploreComponent
+    ExploreComponent,
     HomeComponentComponent,
     PostComponentComponent,
     StoryComponentComponent,
