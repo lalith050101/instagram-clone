@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastNotificationService } from 'src/app/core/services/toaster/toast-notification.service';
+import { UserService } from 'src/app/core/services/user/user.service';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +11,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private userService: UserService, private toasterService: ToastNotificationService, private router: Router) { }
   
   signin = this.fb.group({
     username:['',Validators.required],
@@ -16,6 +19,21 @@ export class LoginComponent implements OnInit {
   })
 
   onSubmit(){
+
+    this.userService.getUserWithUsername(this.signin.get('username')?.value).subscribe((data) => {    
+      if(!data) {
+        this.toasterService.showWarning("Username Not exists", "Try Again")
+      } 
+      else {
+        if(data.password === this.signin.get('password')?.value) {
+          localStorage.setItem('username', data.username);
+          this.router.navigate(['/home']);
+        }
+        else {
+          this.toasterService.showWarning("Wrong Password", "Try Again")
+        }
+      }    
+    })
   }
 
   get username(){
