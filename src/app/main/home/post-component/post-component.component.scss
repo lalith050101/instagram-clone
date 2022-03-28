@@ -1,0 +1,114 @@
+.post-card{
+    background-color: #fff;
+    border:1px solid rgb(219, 219, 219);
+    margin:1em 0em;
+    overflow: hidden;
+}
+.page-name{
+    margin-right:5px;
+}
+.card-header-section{
+    padding:10px;
+    .page-name{
+        margin:5px;
+    }
+    .gradient-background,.white-background{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 200px;
+    }
+    .gradient-background{
+        height:31px;
+        width:31px;
+        background-image: linear-gradient(to bottom left, rgb(197,46,145),rgb(249,155,74));
+        .white-background{
+            height:28px;
+            width:28px;
+            background-color:#fff;
+            img{
+                height:25px;
+                width:25px;
+                border-radius: 200px;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.row-container{
+    display:flex;
+    flex-direction: row;
+    overflow:hidden;
+    align-items: center;
+    align-content: center;
+}
+.sp-bw-comp{
+    justify-content: space-between;
+}
+#post{
+    width:100%;
+    aspect-ratio: 1/1.1;
+    object-fit: cover;
+}
+#post-button{
+    color:skyblue;
+    border:none;
+    background-color: white;
+    font-size: small;
+}
+.add-comment-section{
+    width: 100%;
+    border-top: 1px solid rgba(var(--ce3,239,239,239),1);
+    .smiley,button{
+        flex:1;
+    }
+    input{
+        flex:6;
+        border:none;
+        font-size: x-small;
+        padding:10px 0px;
+    }
+    input:focus{
+        outline:none;
+    }
+
+}
+.icon{
+    height:40px;
+    width:40px;
+    padding:10px;
+}
+.icon:hover{
+    cursor: pointer;
+}
+
+.time-section{
+    color:grey;
+    font-size: x-small;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.comment-section{
+    color:grey;
+    font-size: small;
+    font-weight: 300;
+}
+
+.liked-profile,.like-count{
+margin:0px 5px;
+}
+
+.liked-by-section,.desc-section,.comment-section,.time-section{
+    margin:2px 10px;
+}
+
+.bold-small{
+    font-weight: 600;
+    font-size: small;
+}
+
+.small{
+    font-size: small;
+}
