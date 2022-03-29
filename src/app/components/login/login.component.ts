@@ -11,7 +11,11 @@ import { UserService } from 'src/app/core/services/user/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private userService: UserService, private toasterService: ToastNotificationService, private router: Router) { }
+  constructor(private fb: FormBuilder, private userService: UserService, private toasterService: ToastNotificationService, private router: Router) {
+    if(localStorage.getItem('user')) {
+      router.navigateByUrl('/home');
+    }
+   }
   
   signin = this.fb.group({
     username:['',Validators.required],
@@ -26,7 +30,8 @@ export class LoginComponent implements OnInit {
       } 
       else {
         if(data.password === this.signin.get('password')?.value) {
-          localStorage.setItem('username', data.username);
+          data.password = '';
+          localStorage.setItem('user', JSON.stringify(data));
           this.router.navigate(['/home']);
         }
         else {
@@ -76,6 +81,6 @@ export class LoginComponent implements OnInit {
     slides[this.slideIndex-1].style.display = "block";
     setTimeout(() =>{
       this.showSlides()
-    },1600)
+    },3500)
   }
 }

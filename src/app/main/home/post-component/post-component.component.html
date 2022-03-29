@@ -1,105 +1,5 @@
-<div class="post-section">
-    <div class="post-card">
-        <div class="card-header-section row-container">
-            <div class="page-dp">
-                <div class="gradient-background">
-                    <div class="white-background">
-                        <img src="https://www.cricketkeeda.com/wp-content/uploads/2020/03/if-IPL-get-cancelled-then-ms-dhoni-will-play-in-t20-world-cup-640x640.jpg" alt="">
-                    </div>
-                </div>   
-            </div>
-            <div class="page-name bold-small">
-                epicpostu
-            </div>
-        </div>
-        <div class="post-image">
-            <img src="https://i.ytimg.com/vi/z182mK0Kdyg/maxresdefault.jpg" alt="" id="post">
-        </div>
-        <div class="interaction-section row-container sp-bw-comp">
-            <div class="like-comment-section row-conatiner">
-                <img class="icon" src="../../assets/res/heart.png" alt="">
-                <img class="icon" src="../../assets/res/bubble-chat.png" alt="">
-                <img class="icon" src="../../assets/res/send.png" alt="">
-            </div>
-            <div class="save-section">
-               <img src="../../assets/res/bookmark.png" alt="" class="icon">
-            </div>
-        </div>
-        <div class="liked-by-section row-container small">
-            <div class="img-stack-section "></div>
-            Liked by
-            <p class="liked-profile bold-small"> lalith</p>
-            and
-            <p class="like-count bold-small"> 12,253 others</p>
-        </div>
-        <div class="desc-section small">
-                <span class="bold-small page-name">mokapostu</span>desc
-        </div>
-        <div class="comment-section">
-            View all 35 comments
-        </div>
-        <div class="time-section">
-            14 hours ago
-        </div>
-        <div class="add-comment-section row-container">
-            <div class="smiley">
-                <img src="../../assets/res/smile.png" alt="" class="icon">
-            </div>
-            <input type="text" placeholder="Add a comment.">
-            <button id="post-button" placeholder="Add a comment">Post</button>
-        </div>
-    </div>
+<div class="post-section" *ngFor="let post of posts" >
 
-    <div class="post-card">
-        <div class="card-header-section row-container">
-            <div class="page-dp">
-                <div class="gradient-background">
-                    <div class="white-background">
-                        <img src="https://www.cricketkeeda.com/wp-content/uploads/2020/03/if-IPL-get-cancelled-then-ms-dhoni-will-play-in-t20-world-cup-640x640.jpg" alt="">
-                    </div>
-                </div>   
-            </div>
-            <div class="page-name bold-small">
-                epicpostu
-            </div>
-        </div>
-        <div class="post-image">
-            <img src="https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2014/07/08132212/bigstock-Travel-Photographer-Taking-A-P-302170048-min-653x300.jpg" alt="" id="post">
-        </div>
-        <div class="interaction-section row-container sp-bw-comp">
-            <div class="like-comment-section row-conatiner">
-                <img class="icon" src="../../assets/res/heart.png" alt="">
-                <img class="icon" src="../../assets/res/bubble-chat.png" alt="">
-                <img class="icon" src="../../assets/res/send.png" alt="">
-            </div>
-            <div class="save-section">
-               <img src="../../assets/res/bookmark.png" alt="" class="icon">
-            </div>
-        </div>
-        <div class="liked-by-section row-container small">
-            <div class="img-stack-section "></div>
-            Liked by
-            <p class="liked-profile bold-small"> lalith</p>
-            and
-            <p class="like-count bold-small"> 12,253 others</p>
-        </div>
-        <div class="desc-section small">
-                <span class="bold-small page-name">mokapostu</span>desc
-        </div>
-        <div class="comment-section">
-            View all 35 comments
-        </div>
-        <div class="time-section">
-            14 hours ago
-        </div>
-        <div class="add-comment-section row-container">
-            <div class="smiley">
-                <img src="../../assets/res/smile.png" alt="" class="icon">
-            </div>
-            <input type="text" placeholder="Add a comment.">
-            <button id="post-button" placeholder="Add a comment">Post</button>
-        </div>
-    </div>
     
     <div class="post-card">
         <div class="card-header-section row-container">
@@ -111,16 +11,20 @@
                 </div>   
             </div>
             <div class="page-name bold-small">
-                epicpostu
+                {{post.username}}
             </div>
         </div>
         <div class="post-image">
-            <img src="https://igimages.gumlet.io/tamil/home/thala-ajith3032022m1.jpg?w=376&dpr=2.6" alt="" id="post">
+            <img src={{post.url}} alt="post img" id="post" *ngIf="isImage(post.url) && post.url" >
+            <video *ngIf="!isImage(post.url) && post.url" controls >
+                <source src={{post.url}} alt="post video" autoplay muted  (click)="togglePlay()" >
+            </video>
+               
         </div>
         <div class="interaction-section row-container sp-bw-comp">
             <div class="like-comment-section row-conatiner">
                 <img class="icon" src="../../assets/res/heart.png" alt="">
-                <img class="icon" src="../../assets/res/bubble-chat.png" alt="">
+                <img class="icon" (click)="postView(post.postId)" src="../../assets/res/bubble-chat.png" alt="">
                 <img class="icon" src="../../assets/res/send.png" alt="">
             </div>
             <div class="save-section">
@@ -130,7 +34,7 @@
         <div class="liked-by-section row-container small">
             <div class="img-stack-section "></div>
             Liked by
-            <p class="liked-profile bold-small"> lalith</p>
+            <p class="liked-profile bold-small"> CoderZ</p>
             and
             <p class="like-count bold-small"> 12,253 others</p>
         </div>
@@ -141,7 +45,7 @@
             View all 35 comments
         </div>
         <div class="time-section">
-            14 hours ago
+            {{post.timeStamp}}
         </div>
         <div class="add-comment-section row-container">
             <div class="smiley">
@@ -151,4 +55,5 @@
             <button id="post-button" placeholder="Add a comment">Post</button>
         </div>
     </div>
+
 </div>

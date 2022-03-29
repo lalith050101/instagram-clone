@@ -19,6 +19,7 @@ export class FileUploadService {
     private postService: PostService
   ) { }
 
+
   pushFileToStorage(fileUpload: FileUpload, userId: string, type: string, caption?: string): Observable<number | undefined> {
     const filePath = `${type}/${userId}/${fileUpload.file.name}`;
     const storageRef = this.storage.ref(filePath);
@@ -57,4 +58,6 @@ export class FileUploadService {
     const storageRef = this.storage.ref(basePath);
     storageRef.child(name).delete();
   }
+
+  
 }
