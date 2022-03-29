@@ -11,16 +11,20 @@
                 </div>   
             </div>
             <div class="page-name bold-small">
-                {{post.caption}}
+                {{post.username}}
             </div>
         </div>
         <div class="post-image">
-            <img src={{post.url}} alt="" id="post">
+            <img src={{post.url}} alt="post img" id="post" *ngIf="isImage(post.url) && post.url" >
+            <video *ngIf="!isImage(post.url) && post.url" controls >
+                <source src={{post.url}} alt="post video" autoplay muted  (click)="togglePlay()" >
+            </video>
+               
         </div>
         <div class="interaction-section row-container sp-bw-comp">
             <div class="like-comment-section row-conatiner">
                 <img class="icon" src="../../assets/res/heart.png" alt="">
-                <img class="icon" src="../../assets/res/bubble-chat.png" alt="">
+                <img class="icon" (click)="postView(post.postId)" src="../../assets/res/bubble-chat.png" alt="">
                 <img class="icon" src="../../assets/res/send.png" alt="">
             </div>
             <div class="save-section">
@@ -30,7 +34,7 @@
         <div class="liked-by-section row-container small">
             <div class="img-stack-section "></div>
             Liked by
-            <p class="liked-profile bold-small"> lalith</p>
+            <p class="liked-profile bold-small"> CoderZ</p>
             and
             <p class="like-count bold-small"> 12,253 others</p>
         </div>
@@ -41,7 +45,7 @@
             View all 35 comments
         </div>
         <div class="time-section">
-            14 hours ago
+            {{post.timeStamp}}
         </div>
         <div class="add-comment-section row-container">
             <div class="smiley">

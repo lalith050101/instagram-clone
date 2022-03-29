@@ -7,6 +7,6 @@ export interface Post {
   url: string;
   caption: string;
   timeStamp: string;
-  comments: boolean;
-  likes: boolean;
+  likes: number;
+  comments: number;
 }

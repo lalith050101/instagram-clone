@@ -131,6 +131,11 @@
   .share{
     color: #0095f6;
     font-weight: 500;
+    background: none;
+    border: none;
+    padding: 0;
+    // cursor: pointer;
+    outline: inherit;
   }
   .upload-hr{
     margin-top: -5px;

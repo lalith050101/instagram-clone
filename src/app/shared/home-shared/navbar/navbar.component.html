@@ -4,9 +4,9 @@
   <div class="col-sm-1" id="col1"></div>
   <a class="navbar-brand col-sm-1" href="/"><img class="logo-img" src="assets/Images/instalogo.png"/></a>
   <div class="col-sm-5" id="searchDiv">
-      <form class="form-inline my-2 my-lg-0 search-box">
+      <form class="form-inline  search-box">
           <i class="material-icons search-icon">search</i>
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" data-toggle="dropdown" id="searchdrop">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-toggle="dropdown" id="searchdrop">
           <div class="dropdown-menu" id="searchdropdownmenu" aria-labelledby="searchdrop" >
             <hr class="hr-left3">
             <div id="arrow3"></div>
@@ -190,7 +190,7 @@
       </li>
         <li class="nav-item dropdown">
 
-          <a class="nav-link" data-toggle="dropdown" id="menu"><div class="avatar"><img (click) = "disableIcons()" src="assets/Images/avatar.jpg"/></div></a>
+          <a class="nav-link" data-toggle="dropdown" id="menu"><div class="avatar"><img (click) = "disableIcons()" src="{{authenticatedUser.profile}}"/></div></a>
           
           <div class="dropdown-menu dropdown-menu2" aria-labelledby="menu" >
               <hr class="hr-left">

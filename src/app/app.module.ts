@@ -15,7 +15,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeSharedModule } from './shared/home-shared/home-shared.module';
 
-
 import { ExploreComponent } from './main/explore/explore.component';
 
 import { HomeComponentComponent } from './main/home/home-component/home-component.component';
