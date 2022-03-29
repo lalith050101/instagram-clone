@@ -20,14 +20,12 @@ export class CreatePostComponent implements OnInit {
   isaccess:boolean=false;
   isadvance=false;
   isdiscard=false;
-
-
+  
   ngOnInit(): void {
     this.disableupload=true;
     this.disablechoose=true;
   }
 
-    
     constructor(private postservice:PostService) {
       this.displaypost();  
     }
