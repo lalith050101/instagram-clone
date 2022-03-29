@@ -23,7 +23,7 @@ export class UserService {
           username: data[key].username,
           email: data[key].email,
           name: data[key].name,
-          profile: data[key].profile
+          profile: data[key].profile,
         }
         users.push(temp);
       })
