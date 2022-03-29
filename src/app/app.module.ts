@@ -15,7 +15,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeSharedModule } from './shared/home-shared/home-shared.module';
 
-
 import { ExploreComponent } from './main/explore/explore.component';
 
 import { HomeComponentComponent } from './main/home/home-component/home-component.component';
@@ -29,6 +28,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ToastrModule } from 'ngx-toastr';
+import { MessagesComponent } from './components/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,8 @@ import { ToastrModule } from 'ngx-toastr';
     SignupComponent,
     FooterComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    MessagesComponent
   ],
 
   imports: [
