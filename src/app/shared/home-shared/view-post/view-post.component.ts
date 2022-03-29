@@ -17,6 +17,7 @@ export class ViewPostComponent implements OnInit {
   isdisableaudio:boolean=false;
   ispostoption:boolean=false;
   isuser:boolean=false;
+  
   video = document.querySelector('video');
   constructor(private postservice:PostService) {
     this.viewPost();

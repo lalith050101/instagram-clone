@@ -3,15 +3,15 @@
 <div class="container-fluid" id="profileDiv">
     <div class="row">
         <div class="col-sm-2"></div>
-        <div class="col-sm-2" id="col2">
-            <img src="assets/Images/profileIcon.png" alt="profileicon" id="profile">
+        <div class="col-sm-2" id="col2" >
+            <img (click)="showchooseProfile()" src="{{authenticatedUser.profile}}" alt="profileicon" id="profile">
         </div>
      
         <div class="col-sm-5" id="col5">
             <div class="row">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-3">
-                    <p id="heading">{{getUser().username}}</p>
+                    <p id="heading">{{authenticatedUser.username}}</p>
                 </div>
                 <div class="col-sm-3">
                     <button class="btn btn-md" id="editprofile">Edit Profile</button>
@@ -24,7 +24,7 @@
              <!--follow details-->
              <div class="row" id="followrow">
                  <div class="col-sm-1"></div>
-                 <div class="col-sm-3"><span id="dark">1,230</span> posts</div>
+                 <div class="col-sm-3"><span id="dark">{{postDetails.length}}</span> posts</div>
                  <div class="col-sm-3"><span id="dark">2M</span> followers</div>
                  <div class="col-sm-4"><span id="dark">1.5M</span> following</div>
              </div>
@@ -33,7 +33,7 @@
              <div class="bio row">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-10">
-                    <h6>{{getUser().name}}</h6>
+                    <h6>{{authenticatedUser.name}}</h6>
                     <h6 id="desc">Entrepreneur</h6>
                     <p>💥👉Follow me as your Daily Motivation &</p>
                     <p>Transform your life👈💥</p>
@@ -111,15 +111,20 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane container fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div class="row">
-                            <div class="col-sm-4 overlayclass" (click)="showPost()">
-                                <img src="assets/Images/post1.jpg" class="img-responsive">
+                            <div class="col-sm-4 overlayclass" *ngFor="let post of postDetails" (click)="showPost()" >
+                                <img src={{post.link}} class="img-responsive" *ngIf="isImage(post.link) && post.link" >
+                                <video *ngIf="!isImage(post.link) && post.link" preload="metadata" width="100%" height="100%">
+                                    <source src={{loadThumbnail(post.link)}}  alt="post video" autoplay muted  controls >
+                                </video>
                                 <div class="overlay">
                                     <div class="text">
-                                        <i class='fas fa-heart'></i> 2,400 &nbsp;&nbsp;
-                                        <i class='fas fa-comment'></i> 1,000
+                                        <i class='fas fa-heart'></i> {{post.likeCount}} &nbsp;&nbsp;
+                                        <i class='fas fa-comment'></i> {{post.commentCount}}
                                     </div>
                                 </div>
                             </div>
+
+
                             <div class="col-sm-4 overlayclass">
                                 <img src="assets/Images/post2.jpg" class="img-responsive">
                                 <div class="overlay">
@@ -558,6 +563,7 @@
         </div>
       </div>
     </div>
+   
     <script>
       function googleTranslateElementInit() {
         new google.translate.TranslateElement({
@@ -576,3 +582,58 @@
 
 </footer>
  
+<div id="overlay-chooseProfile" class="upload-overlay" [ngStyle]="{'display': hidechooseProfile ? 'none' : 'block' }">
+
+    <div id="chooseProfile-section">
+
+        <div class="chooseProfile-conatiner">
+
+            <div class="chooseProfile-header">
+                <img src="{{authenticatedUser.profile}}" class="chooseProfile-photo">
+                <p class="head">Synced Profile Photo</p>
+                <p class="content">Instagram, Facebook</p>
+            </div>
+            <div class="chooseProfile-content-primary bb" >
+                <div class="choose-btn-wrapper">
+                    <button class="btn" style="cursor: pointer;">Upload Photo</button>
+                    <input type="file" name="myfile" (change)="selectFile($event)"/> 
+                </div>
+            </div>
+            <div class="chooseProfile-content bb">
+                <p>Manage Sync Settings</p>
+            </div>
+            <div class="chooseProfile-danger bb" >
+                <a>Remove Current Photo</a>
+            </div>
+            <div class="chooseProfile-content" (click)="closechooseProfile()">
+                <p>Cancel</p>
+            </div>
+        </div>
+
+    </div>  
+</div>
+
+
+<div id="overlay-uploadProfile" class="upload-overlay" [ngStyle]="{'display': hideuploadProfile ? 'none' : 'block' }">
+
+    <div id="uploadProfile-section">
+
+        <div class="uploadProfile-conatiner">
+
+            <div class="uploadProfile-header">
+                <p class="head">Your profile photo will also change on Facebook</p>
+                <p class="content">Because you synced your profile photo, your photo will change on both Instagram and Facebook</p>
+            </div>
+            <div class="uploadProfile-content-primary bb" >
+                <button class="ok" [disabled]="isdisableok" (click)="uploadProfile()">Ok</button>
+            </div>
+            <div class="uploadProfile-content bb">
+                <p>Manage Sync Settings</p>
+            </div>
+            <div class="uploadProfile-content" (click)="closeuploadProfile()">
+                <p>Cancel</p>
+            </div>
+        </div>
+
+    </div>  
+</div>

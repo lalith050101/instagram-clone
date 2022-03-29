@@ -24,9 +24,8 @@ export class PostComponentComponent implements OnInit {
     })
   }
 
-  postView(postId: string){
-    console.log("called postView");
-    
+
+  postView(){    
     this.postservice.showPost(postId);
   }
 

@@ -41,7 +41,7 @@
                 <div class="upload-header">
                     <p><i class="fa-solid fa-arrow-left-long"></i></p>
                     <p>Create new post</p>
-                    <p class="share">Share</p>
+                    <button class="share" [disabled]="isdisableShare" (click)="upload()">Share</button>
                 </div>
                 
                 <hr class="upload-hr">
@@ -57,7 +57,7 @@
                 
                         <div class="profile-header">
                            <img src="/assets/Images/profile.PNG">
-                           <p>Ganapathyda</p>
+                           <p>{{authenticatedUser.username}}</p>
                         </div>
                 
                         <div class="comment">
