@@ -143,6 +143,29 @@ export class PostService {
     );
   }
 
+  getAllPosts():Observable<any>{
+
+      return this.http.get( this.baseURL+'posts.json' ).pipe(
+        map( (data: any) => {
+          console.log(data);
+          
+          let posts: PostHover[] = [];
+          Object.keys(data).forEach( key => {
+            let temp: PostHover = {
+              postId: key,
+              link: data[key].url,
+              likeCount: data[key].likes,
+              commentCount: data[key].comments
+            }
+              posts.push(temp);
+          });
+          return posts;
+        })
+      );
+    
+  }
+
+
   getPostLikes(postId: string): Observable<any> {
     return this.http.get(`${this.baseURL}likes.json`).pipe(
       map((data: any) => {
