@@ -10,21 +10,37 @@ import { PostService } from 'src/app/core/services/post/post.service';
 })
 export class PostComponentComponent implements OnInit {
 
+  isdisablePause: boolean=false;
+
   constructor(private postservice:PostService, private http: HttpClient) { }
 
-  posts: any = [];
+  posts: Post[] = [];
 
   ngOnInit(): void {
-    this.http.get("assets/static-data/posts.json").subscribe(data => {
+    this.http.get<Post[]>("assets/static-data/posts.json").subscribe(data => {
       console.log(data);
       this.posts = data;
       
     })
   }
 
-  postView(){
+  postView(postId: string){
     console.log("called postView");
     
-    this.postservice.showPost();
+    this.postservice.showPost(postId);
   }
+
+  isImage(url: string) {
+    return this.postservice.isImage(url);
+  }
+
+  togglePlay(){
+    if(this.isdisablePause){
+      this.isdisablePause=false;
+      console.log(this.isdisablePause);
+    }else if(this.isdisablePause==false){
+     this.isdisablePause=true;
+      console.log(this.isdisablePause);
+    }
+ }
 }

@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit {
   }
 
   showPost(){
-    this.postservice.showPost();
+    // this.postservice.showPost();
   }
 
   getUser() {

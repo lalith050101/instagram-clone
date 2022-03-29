@@ -15,12 +15,16 @@
             </div>
         </div>
         <div class="post-image">
-            <img src={{post.url}} alt="" id="post">
+            <img src={{post.url}} alt="post img" id="post" *ngIf="isImage(post.url) && post.url" >
+            <video *ngIf="!isImage(post.url) && post.url" controls >
+                <source src={{post.url}} alt="post video" autoplay muted  (click)="togglePlay()" >
+            </video>
+               
         </div>
         <div class="interaction-section row-container sp-bw-comp">
             <div class="like-comment-section row-conatiner">
                 <img class="icon" src="../../assets/res/heart.png" alt="">
-                <img class="icon" (click)="postView()" src="../../assets/res/bubble-chat.png" alt="">
+                <img class="icon" (click)="postView(post.postId)" src="../../assets/res/bubble-chat.png" alt="">
                 <img class="icon" src="../../assets/res/send.png" alt="">
             </div>
             <div class="save-section">
