@@ -11,7 +11,7 @@
                 </div>   
             </div>
             <div class="page-name bold-small">
-                {{post.caption}}
+                {{post.username}}
             </div>
         </div>
         <div class="post-image">
@@ -20,7 +20,7 @@
         <div class="interaction-section row-container sp-bw-comp">
             <div class="like-comment-section row-conatiner">
                 <img class="icon" src="../../assets/res/heart.png" alt="">
-                <img class="icon" src="../../assets/res/bubble-chat.png" alt="">
+                <img class="icon" (click)="postView()" src="../../assets/res/bubble-chat.png" alt="">
                 <img class="icon" src="../../assets/res/send.png" alt="">
             </div>
             <div class="save-section">
@@ -30,7 +30,7 @@
         <div class="liked-by-section row-container small">
             <div class="img-stack-section "></div>
             Liked by
-            <p class="liked-profile bold-small"> lalith</p>
+            <p class="liked-profile bold-small"> CoderZ</p>
             and
             <p class="like-count bold-small"> 12,253 others</p>
         </div>
@@ -41,7 +41,7 @@
             View all 35 comments
         </div>
         <div class="time-section">
-            14 hours ago
+            {{post.timeStamp}}
         </div>
         <div class="add-comment-section row-container">
             <div class="smiley">
