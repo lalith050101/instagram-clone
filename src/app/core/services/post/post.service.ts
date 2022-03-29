@@ -9,9 +9,6 @@ import {Like} from "../../interfaces/react/like";
 import {PostHover} from "../../interfaces/profile/post-hover";
 import {Post} from "../../interfaces/post/post";
 
-import { Post } from '../../interfaces/post/post';
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -23,8 +20,12 @@ export class PostService {
 
   private viewpost = new BehaviorSubject<boolean>(true);
   showpostData = this.viewpost.asObservable();
+
   private postURL = new BehaviorSubject<string>("");
   $postURL = this.postURL.asObservable();
+  
+  private postid = new BehaviorSubject<string>("");
+  $postid = this.postid.asObservable();
 
 
   private baseURL: string = 'https://instagram-clone-ui-1f83e-default-rtdb.firebaseio.com/'
@@ -38,21 +39,24 @@ export class PostService {
   getPostComments( postId: string): Observable<any> {
     return this.http.get(`${this.baseURL}comments.json`).pipe(
       map((data: any) => {
-        let comments: Comment[] = [];
-        Object.keys(data).forEach( key => {
-          if( postId === data[key].postId) {
-            let temp: Comment = {
-              commentId: key,
-              userId: data[key].userId,
-              postId: data[key].postId,
-              text: data[key].text,
-              username: data[key].username,
-              timeStamp: data[key].timeStamp
-            }
-            comments.push(temp);
-          }
-        });
-        return comments;
+        if(data){
+            let comments: Comment[] = [];
+            Object.keys(data).forEach( key => {
+              if( postId === data[key].postId) {
+                let temp: Comment = {
+                  commentId: key,
+                  userId: data[key].userId,
+                  postId: data[key].postId,
+                  text: data[key].text,
+                  username: data[key].username,
+                  timeStamp: data[key].timeStamp
+                }
+                comments.push(temp);
+              }
+            });
+            return comments;
+        }
+        return [];
       })
     );
   }
@@ -121,7 +125,7 @@ export class PostService {
         let posts: PostHover[] = [];
         Object.keys(data).forEach( key => {
           let temp: PostHover = {
-            postId: data[key].userId,
+            postId: key,
             link: data[key].url,
             likeCount: data[key].likes,
             commentCount: data[key].comments
@@ -174,14 +178,21 @@ export class PostService {
     this.viewpost.next(false);
 
     this.http.get<Post[]>("assets/static-data/posts.json").subscribe(data => {    
-      this.postURL.next(data.find(post => post.postId === postId)?.url!);
-    })
-
+        this.postURL.next(data.find(post => post.postId === postId)?.url!);
+      })
   }
 
-  isImage(url: string) {
-    url = url.split('?')[0];
-    return /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url);
+  viewPost(postId:string){
+    this.viewpost.next(false);
+    console.log(postId);
+    
+    this.postid.next(postId);
+  }  
+
+    isImage(url: string) {
+      url = url.split('?')[0];
+      return /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url);
+    }
   }
 
-}
+  

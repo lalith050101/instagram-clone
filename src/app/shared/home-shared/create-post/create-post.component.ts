@@ -70,7 +70,7 @@ export class CreatePostComponent implements OnInit {
     
     captionlength(){
        this.length=this.caption.length;
-       if(this.length>4){
+       if(this.length>0){
           this.isdisableShare=false;
        }
     }
