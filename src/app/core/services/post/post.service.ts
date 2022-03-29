@@ -8,6 +8,9 @@ import {finalize, map} from "rxjs/operators";
 import {Like} from "../../interfaces/react/like";
 import {PostHover} from "../../interfaces/profile/post-hover";
 
+import { Post } from '../../interfaces/post/post';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,7 +22,8 @@ export class PostService {
 
   private viewpost = new BehaviorSubject<boolean>(true);
   showpostData = this.viewpost.asObservable();
-
+  private postURL = new BehaviorSubject<string>("");
+  $postURL = this.postURL.asObservable();
 
 
   private baseURL: string = 'https://instagram-clone-ui-1f83e-default-rtdb.firebaseio.com/'
@@ -49,6 +53,7 @@ export class PostService {
       this.hidecreatepost.next(false);
   }
 
+
   viewProfilePosts( userId?: string) : Observable<any> {
     return this.http.get( this.baseURL+'posts.json' ).pipe(
       map( (data: any) => {
@@ -75,12 +80,19 @@ export class PostService {
     );
   }
 
-  showPost(){
-    this.viewpost.next(false)
+
+  showPost(postId: string){
+    this.viewpost.next(false);
+
+    this.http.get<Post[]>("assets/static-data/posts.json").subscribe(data => {    
+      this.postURL.next(data.find(post => post.postId === postId)?.url!);
+    })
+
   }
 
   isImage(url: string) {
     url = url.split('?')[0];
     return /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url);
   }
+
 }

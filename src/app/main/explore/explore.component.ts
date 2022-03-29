@@ -13,6 +13,6 @@ export class ExploreComponent implements OnInit {
   ngOnInit(): void {
   }
   showPost(){
-    this.postservice.showPost();
+    // this.postservice.showPost();
   }
 }

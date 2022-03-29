@@ -10,7 +10,7 @@ export class ViewPostComponent implements OnInit {
 
   isdisablepostview:boolean=true;
 
-  url:any="assets/videos/vertical.mp4";
+  url:string="";
 
   format:any;
   isdisablePause: boolean=false;
@@ -35,10 +35,19 @@ export class ViewPostComponent implements OnInit {
       this.isdisablepostview=data;
       console.log(data);
     })
+    this.postservice.$postURL.subscribe((data) => {
+      this.url =  data;
+      if(this.postservice.isImage(data))
+        this.format = 'image';
+      else
+        this.format = 'video';
+        
+      console.log("url in view post: " + data);
+      
+    })
     
   }
 
-  
   checkFormat(){
     const file = this.url;
     this.format='video';
