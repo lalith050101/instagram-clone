@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {PostForm} from "../../interfaces/post/post-form";
 import {HttpClient} from "@angular/common/http";
 import {FileUploadService} from "../media/file-upload.service";
-import {Observable} from "rxjs";
+import {BehaviorSubject, Observable, Subject} from "rxjs";
 import { Comment } from "../../interfaces/react/comment";
 import {finalize} from "rxjs/operators";
 import {Like} from "../../interfaces/react/like";
@@ -11,6 +11,15 @@ import {Like} from "../../interfaces/react/like";
   providedIn: 'root'
 })
 export class PostService {
+
+  
+  private hidecreatepost = new BehaviorSubject<boolean>(true);
+  hidepost = this.hidecreatepost.asObservable();
+
+  private viewpost = new BehaviorSubject<boolean>(true);
+  showpostData = this.viewpost.asObservable();
+
+
 
   private baseURL: string = 'https://instagram-clone-ui-1f83e-default-rtdb.firebaseio.com/'
 
@@ -32,6 +41,11 @@ export class PostService {
     return this.http.delete( `${this.baseURL}likes/${unlike.likeId}`);
   }
 
+  showCreatePost(){
+      this.hidecreatepost.next(false);
+  }
 
-
+  showPost(){
+    this.viewpost.next(false)
+  }
 }

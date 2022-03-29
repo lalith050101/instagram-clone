@@ -21,7 +21,7 @@ $fontWeight : 550;
 {
     font-size:29px;
     font-weight: lighter;
-    text-align: right;
+    text-align: left;
 }
 #editprofile
 {
@@ -75,6 +75,7 @@ $fontWeight : 550;
     border-top: 1px solid gainsboro;
     padding-left: 34%;
     cursor: pointer;
+    background-color: #f8f8f8;
     margin-top: 15px;
     font-size: 13px;
 }
@@ -92,9 +93,18 @@ $fontWeight : 550;
 {
     color: gray;
     border: 0px;
+    background-color: #f8f8f8;
     padding: 0px 30px;
     padding-top: 15px;
    
+}
+#myTab .nav-link 
+{
+    background-color: #f8f8f8;
+}
+#word 
+{
+    background-color: #f8f8f8;
 }
 .nav-link i , .nav-link img
 {
@@ -230,7 +240,7 @@ select{
 
 //media queries
 
-@media only screen and (max-width:600px){
+@media only screen and (max-width:575px){
 
     #profileDiv #col2
     {
@@ -306,7 +316,9 @@ select{
     {
         display: none;
     }
-    
+    #heading{
+        text-align: center;
+    }
     #myTab 
 {
     border: 0px;
@@ -446,4 +458,250 @@ background-color: rgba($color: #000000, $alpha:1.0);
     float: left;
 }
 
+}
+
+
+
+
+//div2 
+@media only screen and (min-width:575px) and (max-width:1145px){
+
+    #profileDiv #col2
+    {
+        // margin-left: -100px;
+       max-width: 100;
+       margin-left: -90px;
+        float: left;
+    }
+
+    #profile 
+    {
+        width:100px;
+    }
+
+    #profileDiv #col5 
+    {
+        max-width:430px;
+        float: left;
+        margin-left:10%;
+    }
+
+    #editprofile{
+    padding: 4px 9px;
+    border: 1px solid gainsboro;
+    font-weight: 600;
+    font-size: 14px;
+    overflow: hidden;
+    margin-right: 100px;
+    margin-top: 5px;
+    width:auto;
+    height: 50px;
+    cursor: pointer;
+    }
+
+   .bio 
+    {
+        width: 140%;
+        margin: 0;
+        margin-left: -100px;
+        font-size: 17px;
+        margin-top: 5px;
+    }
+    #heading 
+    {
+
+        margin-left: -60px;
+    }
+    #followrow
+    {
+        display: none;
+    }
+
+    #highlight .list-inline-item img{
+        width: 70px;
+        height: 70px;
+     
+    }
+
+    #highlight .list-inline-item {
+        margin-left: -25px;
+    }
+
+    #highlight
+    {
+        margin-top: 5px;
+    }
+
+    #highlight p
+    {
+        width: 40px;
+        font-size: 10px;
+        font-weight: $fontWeight;
+        margin-top: 7px;
+    }
+
+    // #word 
+    // {
+    //     display: none;
+    // }
+    
+    #myTab 
+{
+    border: 0px;
+    border-top: 1px solid gainsboro;
+
+    cursor: pointer;
+    margin-top:1px;
+}
+   #myTab 
+{
+    border: 0px;
+    border-top: 1px solid gainsboro;
+    padding-left: 34%;
+    cursor: pointer;
+    margin-bottom: 16px;
+    margin-top: 15px;
+    font-size: 13px;
+}
+.nav-link.active {
+    background-color: #f8f8f8;
+    border-radius: 0px;
+    border-top: 1px solid rgb(110, 110, 110);
+    margin-top: -1px;
+    font-weight: 530;
+    color: rgb(54, 54, 54);
+    
+}
+
+.nav-link
+{
+    color: gray;
+    border: 0px;
+    padding: 0px 20px;
+    padding-top: 15px;
+   
+}
+.nav-link i , .nav-link img
+{
+    font-size: 12px;
+    margin-right: 4px;
+}
+
+    #myTabContent .col-sm-4 
+    {
+        width: 33.333333%;
+        padding:0px;
+        margin: 0px;
+        float: left;
+    }
+    #myTabContent .col-sm-4 img
+    {
+        width: 100%;
+        padding:0px;
+        margin: 0px;
+        padding-right: 4px;
+        padding-top: 4px;
+        height: 160px;
+    }
+
+    .translate, .copyright
+{
+    float: left;
+    width: 18%;
+}
+.translate
+{
+    margin-left: 30%;
+    margin-top: -10px;
+    margin-right: 20px;
+}
+
+.copyright
+{
+    margin-left:0px;
+    margin-top: -5px;
+    width: 180px;
+    float: left;
+}
+
+select{
+    border: none;
+    background: #f8f8f8;
+    width: 60px;
+    cursor: pointer;
+    font-size: 12px;
+    color: gray;
+}
+.overlayclass{
+    // margin-top: 25px;
+position: relative;
+width: 100%;
+}
+  
+.overlayclass img, .overlayclass video {
+display: block;
+width: 100%;
+height: 160px;
+}
+
+.overlay {
+position: absolute;
+top: 0;
+bottom: 0;
+padding-top: 4px;
+padding-right: 4px;
+font-size: 12px;
+margin-top: 5px;
+left: 0px;
+right: 0;
+height: 155px;
+width: 99%;
+opacity: 0;
+transition: .5s ease;
+background-color: rgba($color: #000000, $alpha:1.0);
+}
+.overlayclass:hover .overlay {
+    opacity: 0.6;
+    cursor: pointer;
+    }
+
+.text 
+{
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+#followlist
+{
+  display: none;
+}
+
+}
+
+
+
+
+@media only screen and (min-width:575px) and (max-width:882px){
+
+    #editprofile{
+        padding: 4px 9px;
+        border: 1px solid gainsboro;
+        font-weight: 600;
+        font-size: 14px;
+        margin-top: 5px;
+        margin-left: 30px;
+        width: max-content;
+        cursor: pointer;
+        }
+
+    #settings
+    {
+        display: none;
+    }
 }

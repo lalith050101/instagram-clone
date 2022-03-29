@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostService } from 'src/app/core/services/post/post.service';
 
 @Component({
   selector: 'app-create-post',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class CreatePostComponent implements OnInit {
 
   disableupload:boolean=true;
-  disablechoose:boolean=false;
+  disablechoose:boolean=true;
 
   format:any;
   url:any;
@@ -22,10 +23,19 @@ export class CreatePostComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.disableupload=true;
+    this.disablechoose=true;
   }
 
     
-    constructor() { }
+    constructor(private postservice:PostService) {
+      this.displaypost();  
+    }
+  displaypost() {
+    this.postservice.hidepost.subscribe((data)=>{
+      this.disablechoose=data;
+    })
+  }
 
     showAccessbility(){
       if(this.isaccess==true){

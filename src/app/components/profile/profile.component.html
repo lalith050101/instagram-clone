@@ -1,3 +1,5 @@
+<app-navbar></app-navbar>
+<app-view-post></app-view-post>
 <div class="container-fluid" id="profileDiv">
     <div class="row">
         <div class="col-sm-2"></div>
@@ -7,8 +9,9 @@
      
         <div class="col-sm-5" id="col5">
             <div class="row">
-                <div class="col-sm-7">
-                    <p id="heading">motivational_quotes</p>
+                <div class="col-sm-1"></div>
+                <div class="col-sm-3">
+                    <p id="heading">{{getUser().username}}</p>
                 </div>
                 <div class="col-sm-3">
                     <button class="btn btn-md" id="editprofile">Edit Profile</button>
@@ -16,7 +19,7 @@
                 <div class="col-sm-1">
                     <img src="assets/Images/settings.png" id="settings">
                 </div>
-                <div class="col-sm-1"></div>
+                <div class="col-sm-4"></div>
             </div>
              <!--follow details-->
              <div class="row" id="followrow">
@@ -30,7 +33,7 @@
              <div class="bio row">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-10">
-                    <h6>Motivational Quotes</h6>
+                    <h6>{{getUser().name}}</h6>
                     <h6 id="desc">Entrepreneur</h6>
                     <p>💥👉Follow me as your Daily Motivation &</p>
                     <p>Transform your life👈💥</p>
@@ -108,7 +111,7 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane container fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div class="row">
-                            <div class="col-sm-4 overlayclass">
+                            <div class="col-sm-4 overlayclass" (click)="showPost()">
                                 <img src="assets/Images/post1.jpg" class="img-responsive">
                                 <div class="overlay">
                                     <div class="text">

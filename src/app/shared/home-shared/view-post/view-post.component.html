@@ -1,0 +1,243 @@
+<div class="main-content">
+    
+  <div class="overlay" [ngStyle]="{'display': isdisablepostview ? 'none' : 'block' }">
+      <div class="close-overlay" (click)="hidePost()">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+
+      <div id="postview-section">
+
+          <div class="postview-conatiner">          
+              
+            <div class="postview-section">
+                <div class="postview-post-container">
+                  <img [src]="url" *ngIf="format==='image' && url" >
+                  <video [src]="url" *ngIf="format==='video' && url" controls  (click)="togglePlay()" ></video>
+                </div>
+                <div class="videopause-icon" *ngIf="format=='video' && url && !isdisablePause" >
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <!-- <div class="icons">
+                    <p class="user-icon">
+                      <i class="fa-solid fa-user"></i>
+                    </p>
+                    <p class="audio-icon" >
+                      <span >
+                          <i class="fa-solid fa-volume-high"></i>
+                      </span>
+                    </p>
+                </div> -->
+            </div>
+
+              <div class="comment-section">
+                  <div class="profile-header">
+                    <p>
+                      <img src="../../../../assets/Images/profile.PNG">
+                      <span class="profile-leftside">
+                        <span>ganapathyda</span>
+                        <span [ngStyle]="{'display':isuser?'none':'block'}">
+                          <span class="dot"></span>
+                          <span >Follow</span>
+                        </span>
+                      </span>
+                    </p>
+                    <p style="cursor: pointer;"class="flex-dot" (click)="postOptions()">...</p>
+                 </div>
+                 <div class="comments">
+                      
+                          <div class="comment-container">
+                              <div class="user-img">
+                                <img src="../../../../assets/Images/profile.PNG" > 
+                              </div>
+                              <div class="other-content">
+                                <span class="username">ganapathyda</span>
+                                <span class="comment">hahahhahahaha like the prince like the prince 😂😂😂</span>
+                                <p class="tlr">
+                                  <span>1d</span>
+                                  <span>15 likes</span>
+                                  <span>Reply</span>
+                                  <span>...</span>
+                                </p>
+                              </div>
+                              <div class="heart">
+                                <i class="fa-regular fa-heart"></i>
+                              </div>
+                          </div>
+
+                          <div class="comment-container">
+                            <div class="user-img">
+                              <img src="https://imageio.forbes.com/blogs-images/jvchamary/files/2016/03/man_of_steel-1200x800.jpg?fit=bounds&format=jpg&width=960" > 
+                            </div>
+                            <div class="other-content">
+                              <span class="username">c.syresmith</span>
+                              <span class="comment">🤦🏾‍♂️ dad you gotta chill</span>
+                              <p class="tlr">
+                                <span>1d</span>
+                                <span>15 likes</span>
+                                <span>Reply</span>
+                                <span>...</span>
+                              </p>
+                            </div>
+                            <div class="heart">
+                              <i class="fa-regular fa-heart"></i>
+                            </div>
+                        </div>
+
+                        <div class="comment-container">
+                          <div class="user-img">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/f/ff/The_Batman_%28film%29_poster.jpg" > 
+                          </div>
+                          <div class="other-content">
+                            <span class="username">shereezampino</span>
+                            <span class="comment">Oh Lord! Not 2 of you! 😳🤣❤️</span>
+                            <span class="space"></span>
+                            <p class="tlr">
+                              <span>1d</span>
+                              <span>15 likes</span>
+                              <span>Reply</span>
+                              <span>...</span>
+                            </p>
+                          </div>
+                          <div class="heart">
+                            <i class="fa-regular fa-heart"></i>
+                          </div>
+                      </div>
+
+                      <div class="comment-container">
+                        <div class="user-img">
+                          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" > 
+                        </div>
+                        <div class="other-content">
+                          <span class="username">lokesh</span>
+                          <span class="comment">is this possible</span>
+                          <p class="tlr">
+                            <span>1d</span>
+                            <span>15 likes</span>
+                            <span>Reply</span>
+                            <span>...</span>
+                          </p>
+                        </div>
+                        <div class="heart">
+                          <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+
+                    <div class="comment-container">
+                      <div class="user-img">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2202/2202090.png" > 
+                      </div>
+                      <div class="other-content">
+                        <span class="username">sakthi</span>
+                        <span class="comment">What u want buddy</span>
+                        <p class="tlr">
+                          <span>1d</span>
+                          <span>15 likes</span>
+                          <span>Reply</span>
+                          <span>...</span>
+                        </p>
+                      </div>
+                      <div class="heart">
+                        <i class="fa-regular fa-heart"></i>
+                      </div>
+                  </div>
+
+
+      
+              </div>
+
+              <div class="like-detail-icon">
+                  
+                    <p class="left">
+                      <span><i class="fa-regular fa-heart"></i></span>
+                      <span><i class="fa-regular fa-comment"></i></span>
+                      <span><i class="fa-regular fa-paper-plane"></i></span>
+                    </p>
+                    <p class="right">
+                      <span><i class="fa-regular fa-bookmark"></i></span>
+                    </p>
+                  
+              </div>
+
+              <div class="user-like-detail">
+                        <div class="img">
+                          <img class="img1" src="https://cdn-icons-png.flaticon.com/512/3011/3011293.png" alt="">
+                          <img class="img2" src="https://cdn-icons-png.flaticon.com/512/2202/2202090.png" alt="">
+                            <img class="img3" src="https://cdn-icons-png.flaticon.com/512/3011/3011270.png" alt="">
+                        </div>
+                        <span class="likedby">Liked by <span class="username">ganapathy</span> and <span class="likecount">493,578</span> others</span>
+                        <div class="uploadedtime">
+                            <p>2 HOURS AGO</p>
+                        </div>
+              </div>
+
+              <div class="footer">
+                  <span><i class="fa-regular fa-face-smile"></i></span>
+                  <input type="text" placeholder="Add a comment">
+                  <a>Post</a>
+              </div>
+          </div>
+      </div>  
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      <div id="overlay-option" class="overlay" [ngStyle]="{'display': ispostoption ? 'block' : 'none' }">
+
+        <div id="option-section">
+
+            <div class="option-conatiner" [ngStyle]="{'display':isuser? 'block':'none'}">
+                  <div class="option-main" >
+                    <a>Delete</a>
+                  </div>
+                  <div class="option-other" >
+                    <p>Go to post</p>
+                  </div>
+                  <div class="option-other" >
+                    <p>Embed</p>
+                  </div>
+                  <div class="option-footers"  (click)="closeOption()">
+                    <p>Cancel</p>
+                  </div>
+            </div>
+
+            <div class="option-conatiner" [ngStyle]="{'display':isuser? 'none':'block'}">
+                  <div class="option-main" >
+                    <a>Report</a>
+                  </div>
+                  <div class="option-main" >
+                    <a>Unfollow</a>
+                  </div>
+                  <div class="option-other" >
+                    <p>Go to post</p>
+                  </div>
+                  <div class="option-other" >
+                    <p>Share to...</p>
+                  </div>
+                  <div class="option-other" >
+                    <p>Copy Link</p>
+                  </div>
+                  <div class="option-other" >
+                    <p>Embed</p>
+                  </div>
+                  <div class="option-footers"  (click)="closeOption()">
+                    <p>Cancel</p>
+                  </div>
+            </div>
+        </div>  
+
+    </div>
+
+
+
+</div>
+
