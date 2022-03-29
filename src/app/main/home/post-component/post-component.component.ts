@@ -23,8 +23,7 @@ export class PostComponentComponent implements OnInit {
   }
 
   postView(){
-    console.log("called postView");
-    
+
     this.postservice.showPost();
   }
 }
