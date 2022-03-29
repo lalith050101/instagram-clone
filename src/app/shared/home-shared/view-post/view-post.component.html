@@ -12,7 +12,7 @@
             <div class="postview-section">
                 <div class="postview-post-container">
                   <img [src]="url" *ngIf="format==='image' && url" >
-                  <video [src]="url" *ngIf="format==='video' && url" controls  (click)="togglePlay()" ></video>
+                  <video [src]="url" *ngIf="format==='video' && url" (click)="togglePlay()" controls></video>
                 </div>
                 <div class="videopause-icon" *ngIf="format=='video' && url && !isdisablePause" >
                   <i class="fa-solid fa-play"></i>
@@ -35,7 +35,7 @@
                       <img src="../../../../assets/Images/profile.PNG">
                       <span class="profile-leftside">
                         <span>ganapathyda</span>
-                        <span [ngStyle]="{'display':isuser?'none':'block'}">
+                        <span [ngStyle]="{'display':isUser()?'none':'block'}">
                           <span class="dot"></span>
                           <span >Follow</span>
                         </span>
@@ -195,7 +195,7 @@
 
         <div id="option-section">
 
-            <div class="option-conatiner" [ngStyle]="{'display':isuser? 'block':'none'}">
+            <div class="option-conatiner" [ngStyle]="{'display':isUser()? 'block':'none'}">
                   <div class="option-main" >
                     <a>Delete</a>
                   </div>
@@ -210,7 +210,7 @@
                   </div>
             </div>
 
-            <div class="option-conatiner" [ngStyle]="{'display':isuser? 'none':'block'}">
+            <div class="option-conatiner" [ngStyle]="{'display':isUser()? 'none':'block'}">
                   <div class="option-main" >
                     <a>Report</a>
                   </div>

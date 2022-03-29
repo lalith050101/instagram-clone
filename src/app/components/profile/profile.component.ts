@@ -27,6 +27,8 @@ export class ProfileComponent implements OnInit {
   hidechooseProfile:boolean=true;
   hideuploadProfile:boolean=true;
 
+  selected:string='';
+  
   constructor(private postservice:PostService,private uploadService: FileUploadService,private toaster:ToastNotificationService) {}
 
   ngOnInit(): void {
@@ -34,14 +36,21 @@ export class ProfileComponent implements OnInit {
     
   }
 
+  displayPost(postId:string){
+      this.showPost(postId)
+  }
+
   loadThumbnail(url:string){
-    console.log("something");
-    
     return url+'#t=20';
   }
 
-  showPost(){
-    // this.postservice.showPost();
+  showPost(postId:string){
+    // console.log("inside show post");
+    
+    console.log(postId);
+    
+    this.selected=postId;
+    this.postservice.viewPost(postId);
   }
 
   getUser() {

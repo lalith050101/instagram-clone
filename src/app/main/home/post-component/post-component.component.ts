@@ -25,7 +25,7 @@ export class PostComponentComponent implements OnInit {
   }
 
 
-  postView(){    
+  postView(postId:string){    
     this.postservice.showPost(postId);
   }
 
