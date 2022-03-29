@@ -5,6 +5,7 @@ import { FileUpload } from 'src/app/core/models/file-upload';
 import { FileUploadService } from 'src/app/core/services/media/file-upload.service';
 import { PostService } from 'src/app/core/services/post/post.service';
 import { ToastNotificationService } from 'src/app/core/services/toaster/toast-notification.service';
+import { UserService } from 'src/app/core/services/user/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -29,7 +30,7 @@ export class ProfileComponent implements OnInit {
 
   selected:string='';
   
-  constructor(private postservice:PostService,private uploadService: FileUploadService,private toaster:ToastNotificationService) {}
+  constructor(private userService: UserService  ,private postservice:PostService,private uploadService: FileUploadService,private toaster:ToastNotificationService) {}
 
   ngOnInit(): void {
     this.getUser();
@@ -109,6 +110,14 @@ export class ProfileComponent implements OnInit {
                 count=1;
               }
             this.isdisableok=false;
+
+            this.userService.getUserWithUsername(this.authenticatedUser.username).subscribe((data) => {
+              console.log( "update photo get user" + data);
+              if(data){
+                this.authenticatedUser.profile =  data.profile;
+              }    
+              
+            })
 
             }
           },
