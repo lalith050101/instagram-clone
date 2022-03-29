@@ -41,6 +41,7 @@ export class NavbarComponent implements OnInit {
     }else{
       this.chat = "assets/Images/emptychat.png"
     }
+    this.router.navigateByUrl('/message');
   }
 
   onSquareClick(){

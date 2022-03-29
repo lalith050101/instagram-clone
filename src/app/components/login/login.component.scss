@@ -81,7 +81,7 @@ input:focus{
 
 	input:focus ~ .floating-label,
 	input:not(:focus):valid ~ .floating-label {
-		top: -2px;
+		top: -5px;
 		bottom: 0px;
 		left: 10px;
 		font-size: 10px;
@@ -215,11 +215,11 @@ input:focus{
 /* Fading animation */
 .fade {
   animation-name:fade;
-  animation-timing-function: ease-in;
-  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3.5s;
 }
 @keyframes fade {
-  from {opacity: .4}
+  from {opacity: .5}
   to {opacity: 1}
 }
 /* On smaller screens, decrease text size */
