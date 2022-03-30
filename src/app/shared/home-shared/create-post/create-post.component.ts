@@ -26,7 +26,6 @@ export class CreatePostComponent implements OnInit {
   isadvance=false;
   isdiscard=false;
   isdisableShare=true;
-
   selectedFiles?: FileList;
   currentFileUpload?: FileUpload;
   percentage = 0;
@@ -39,9 +38,11 @@ export class CreatePostComponent implements OnInit {
     
   }
 
+
     
     constructor(private postservice:PostService,private uploadService: FileUploadService,private toaster:ToastNotificationService) {
       this.displaypost(); 
+
     }
 
 
