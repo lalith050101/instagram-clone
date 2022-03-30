@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/core/interfaces/user/user';
 import { PostService } from 'src/app/core/services/post/post.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { PostService } from 'src/app/core/services/post/post.service';
 export class NavbarComponent implements OnInit {
 
   constructor(private postservice:PostService,private router:Router) { }
-
+  authenticatedUser: User={} as User;
   home: string = "assets/Images/home3.png";
   chat: string = "assets/Images/emptychat.png";
   square: string = "far fa-plus-square";
@@ -41,6 +42,7 @@ export class NavbarComponent implements OnInit {
     }else{
       this.chat = "assets/Images/emptychat.png"
     }
+    this.router.navigateByUrl('/message');
   }
 
   onSquareClick(){
@@ -99,6 +101,12 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.authenticatedUser=JSON.parse(localStorage.getItem('user')!);
+    if(this.authenticatedUser.profile==null)
+    {
+      console.log("Empty profile");
+      this.authenticatedUser.profile="https://cdn-icons-png.flaticon.com/512/1946/1946429.png";
+    }
   }
 
 }

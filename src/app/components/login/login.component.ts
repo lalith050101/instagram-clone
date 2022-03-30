@@ -81,6 +81,6 @@ export class LoginComponent implements OnInit {
     slides[this.slideIndex-1].style.display = "block";
     setTimeout(() =>{
       this.showSlides()
-    },1600)
+    },3500)
   }
 }
