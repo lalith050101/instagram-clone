@@ -4,6 +4,11 @@ $fontWeight : 550;
     padding-top: 28px;
     background-color: #f8f8f8;
 }
+#coverDesc
+{
+    margin-left: 15px;
+}
+
 
 #followlist
  {
@@ -12,16 +17,18 @@ $fontWeight : 550;
 #profile
 {
     width: 150px;
+    height: 150px;
     border-radius: 50%;
     border: 0px;
     margin-left: 5px;
+    cursor: pointer;
 }
 
 #heading 
 {
     font-size:29px;
     font-weight: lighter;
-    text-align: left;
+    margin-left: -5px;
 }
 #editprofile
 {
@@ -210,6 +217,7 @@ select{
   height: 80px;
   outline: 4px double gainsboro;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 #highlight p
@@ -234,9 +242,15 @@ select{
 
 #highlight .list-inline .list-inline-item
 {
-    margin-right: 47px;
+    margin-right: 40px;
 }
 
+#highlight .list-inline .list-inline-item p
+{
+   text-align: center;
+}
+
+//****************************************************************************************
 
 //media queries
 
@@ -251,6 +265,11 @@ select{
     #profile 
     {
         width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 0px;
+        margin-left: 5px;
+        cursor: pointer;
     }
 
     #profileDiv #col5 
@@ -289,29 +308,53 @@ select{
         display: none;
     }
 
-    #highlight .list-inline-item img{
-        width: 50px;
-        height: 50px;
-     
-    }
+  //highlight
 
-    #highlight .list-inline-item {
-        margin-left: -25px;
-    }
+  
 
-    #highlight
-    {
-        margin-top: 5px;
-    }
+#highlight img{
+    width:50px;
+    height: 50px;
+    outline: 4px double gainsboro;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  #highlight p
+  {
+      width:64px;
+      font-size: 12px;
+      font-weight: $fontWeight;
+  }
+  
+  #new
+  {
+      font-size: 80px;
+      font-weight: lighter;
+  }
+  
+  #highlight
+  {
+      margin-top: 20px;
+  }
+  
+  #highlight .list-inline .list-inline-item
+  {
+      margin-right: 15px;
+  }
+  
+  #highlight .list-inline .list-inline-item p
+  {
+     text-align: center;
+     margin-left: -2px;
+  }
 
-    #highlight p
-    {
-        width: 40px;
-        font-size: 10px;
-        font-weight: $fontWeight;
-        margin-top: 7px;
-    }
-
+.demo
+{
+    font-size: 28px;
+    font-weight: $fontWeight;
+    color: #0095f6;
+}
     #word 
     {
         display: none;
@@ -460,8 +503,7 @@ background-color: rgba($color: #000000, $alpha:1.0);
 
 }
 
-
-
+/****************************************************************************************/
 
 //div2 
 @media only screen and (min-width:575px) and (max-width:1145px){
@@ -476,7 +518,11 @@ background-color: rgba($color: #000000, $alpha:1.0);
 
     #profile 
     {
-        width:100px;
+        width:110px;
+        height: 110px;
+        border-radius: 50%;
+        border: 0px;
+        cursor: pointer;
     }
 
     #profileDiv #col5 
@@ -492,11 +538,16 @@ background-color: rgba($color: #000000, $alpha:1.0);
     font-weight: 600;
     font-size: 14px;
     overflow: hidden;
-    margin-right: 100px;
     margin-top: 5px;
-    width:auto;
-    height: 50px;
+    width:100px;
+    height: 40px;
     cursor: pointer;
+    margin-right: -20px;
+    }
+
+    #settings
+    {
+        margin-left: 20px;
     }
 
    .bio 
@@ -509,42 +560,52 @@ background-color: rgba($color: #000000, $alpha:1.0);
     }
     #heading 
     {
-
-        margin-left: -60px;
+        margin-left: -80px;
     }
     #followrow
     {
         display: none;
     }
 
-    #highlight .list-inline-item img{
-        width: 70px;
-        height: 70px;
-     
-    }
+    //highlight
 
-    #highlight .list-inline-item {
-        margin-left: -25px;
-    }
+  
 
-    #highlight
-    {
-        margin-top: 5px;
-    }
-
-    #highlight p
-    {
-        width: 40px;
-        font-size: 10px;
-        font-weight: $fontWeight;
-        margin-top: 7px;
-    }
-
-    // #word 
-    // {
-    //     display: none;
-    // }
-    
+#highlight img{
+    width:70px;
+    height: 70px;
+    outline: 4px double gainsboro;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  #highlight p
+  {
+      width:64px;
+      font-size: 12px;
+      font-weight: $fontWeight;
+  }
+  
+  #new
+  {
+      font-size: 80px;
+      font-weight: lighter;
+  }
+  
+  #highlight
+  {
+      margin-top: 20px;
+  }
+  
+  #highlight .list-inline .list-inline-item
+  {
+      margin-right: 25px;
+  }
+  
+  #highlight .list-inline .list-inline-item p
+  {
+     text-align: center;
+  }
     #myTab 
 {
     border: 0px;
@@ -695,13 +756,222 @@ background-color: rgba($color: #000000, $alpha:1.0);
         font-weight: 600;
         font-size: 14px;
         margin-top: 5px;
-        margin-left: 30px;
-        width: max-content;
+        margin-left: 10px;
+        width:120px;
+        height: 40px;
         cursor: pointer;
         }
 
     #settings
     {
-        display: none;
+        margin-left: 80px;
+    }
+    #profile 
+    {
+        width: 90px;
+        height:90px;
+
     }
 }
+
+//**************************End of media queries ****************************************
+
+//Upload Profile
+
+
+.choose-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+ 
+  .choose-btn-wrapper  {
+    input{
+      font-size: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+    }
+    .btn {
+        color: #0095f6;
+        font-weight: 500;
+        background: none;
+        border: none;
+        margin: 8px;
+        padding: 0;
+        margin-left: 140px;
+        // cursor: pointer;
+        outline: inherit;
+      }
+      
+  }
+
+#chooseProfile-section{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 380px;
+    height: 350px;
+    background-color:#fff;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    border-radius: 15px;
+    cursor:default;
+    z-index: 99999;
+  }
+  
+  .chooseProfile-header{
+    margin-top: 20px;
+      text-align:center;
+      border-bottom: 1px solid #dbdbdb;
+      .chooseProfile-photo{
+          width: 50px;
+          height: 50px;
+          border-radius: 100%;
+          object-fit: cover;
+      }
+      .head{
+        color: #231F20;
+        font-size: 20px;
+        font-weight: 500;
+        margin-top: 15px;
+      }
+      .content{
+        font-size: 15px;
+        color: #8f8e8f;
+        margin-top: -10px;
+        margin-bottom: 20px;
+      }
+  }
+  
+  .chooseProfile-danger{
+    a{
+      cursor: pointer;
+      margin: 10px;
+      display: flex;
+      color:#ed4956;
+      font-weight: bold;
+      justify-content: center;
+    }
+    
+  }
+  .chooseProfile-content-primary{
+    a{
+      cursor: pointer;
+      margin: 10px;
+      display: flex;
+      color:#0275d8;
+      font-weight: bold;
+      justify-content: center;
+    }
+  }
+  
+  .chooseProfile-content{
+    p{
+      cursor: pointer;
+      margin:10px ;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .bb{
+    border-bottom: 1px solid #dbdbdb;
+  }
+
+  .upload-overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    cursor: default;
+    overflow-y: scroll;
+    z-index:9999;
+}  
+
+.upload-overlay::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+#uploadProfile-section{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 390px;
+    height: 310px;
+    background-color:#fff;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    border-radius: 15px;
+    cursor:default;
+    z-index: 99999;
+  }
+  
+  .uploadProfile-header{
+    margin-top: 20px;
+      text-align:center;
+      border-bottom: 1px solid #dbdbdb;
+      .head{
+        color: #231F20;
+        font-size: 20px;
+        font-weight: 500;
+        margin:15px;
+      }
+      .content{
+        font-size: 15px;
+        color: #8f8e8f;
+        margin-top: -10px;
+        margin-bottom: 20px;
+      }
+  }
+  
+  .ok{
+    color: #0095f6;
+    font-weight: 500;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 10px;
+    margin-left: 180px;
+    outline: inherit;
+  }
+  
+  .uploadProfile-content-primary{
+    a{
+      cursor: pointer;
+      margin: 10px;
+      display: flex;
+      color:#0275d8;
+      font-weight: bold;
+      justify-content: center;
+    }
+  }
+  
+  .uploadProfile-content{
+    p{
+      cursor: pointer;
+      margin:10px ;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .bb{
+    border-bottom: 1px solid #dbdbdb;
+  }
+
+
+  #myTabContent .col-sm-4 img
+  {
+      object-fit: cover;
+  }
+  #myTabContent .col-sm-4 video
+  {
+   object-fit: cover;   
+  }

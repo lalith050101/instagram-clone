@@ -5,4 +5,6 @@ export interface PostForm {
   url: string,
   caption: string;
   timeStamp: Date;
+  likes?: number;
+  comments?: number;
 }

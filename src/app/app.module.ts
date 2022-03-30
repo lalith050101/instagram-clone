@@ -30,6 +30,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ToastrModule } from 'ngx-toastr';
 import { StoryViewComponent } from './main/story-view/story-view.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MessagesComponent } from './components/messages/messages.component';
+
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     LoginComponent,
     ProfileComponent,
     StoryViewComponent,
+    MessagesComponent,
   ],
 
   imports: [
