@@ -28,7 +28,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ToastrModule } from 'ngx-toastr';
+import { StoryViewComponent } from './main/story-view/story-view.component';
 import { MessagesComponent } from './components/messages/messages.component';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { MessagesComponent } from './components/messages/messages.component';
     FooterComponent,
     LoginComponent,
     ProfileComponent,
-    MessagesComponent
+    StoryViewComponent,
+    MessagesComponent,
   ],
 
   imports: [

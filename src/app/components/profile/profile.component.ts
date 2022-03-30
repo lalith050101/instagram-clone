@@ -56,10 +56,14 @@ export class ProfileComponent implements OnInit {
 
   getUser() {
     this.authenticatedUser=JSON.parse(localStorage.getItem('user')!);
-    console.log(this.authenticatedUser.id);
-    
+    console.log(this.authenticatedUser);
+    if(this.authenticatedUser.profile==null)
+    {
+      console.log("Empty profile");
+      this.authenticatedUser.profile="https://cdn-icons-png.flaticon.com/512/1946/1946429.png";
+    }
     this.postservice.viewProfilePosts(this.authenticatedUser.id).subscribe((data)=>{
-       this.postDetails=data;
+       this.postDetails=data.reverse();
        console.log(this.postDetails);
        
     })

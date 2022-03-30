@@ -11,6 +11,7 @@ import { PostService } from 'src/app/core/services/post/post.service';
 export class PostComponentComponent implements OnInit {
 
   isdisablePause: boolean=false;
+  ispostoption:boolean=false;
 
   constructor(private postservice:PostService, private http: HttpClient) { }
 
@@ -20,13 +21,20 @@ export class PostComponentComponent implements OnInit {
     this.http.get<Post[]>("assets/static-data/posts.json").subscribe(data => {
       console.log(data);
       this.posts = data;
-      
     })
   }
 
 
   postView(postId:string){    
     this.postservice.showPost(postId);
+  }
+
+  postOptions(){
+    this.ispostoption=true;
+  }
+
+  closeOption(){
+    this.ispostoption=false;
   }
 
   isImage(url: string) {
