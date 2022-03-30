@@ -31,7 +31,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { StoryViewComponent } from './main/story-view/story-view.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { PostItemComponent } from './main/home/post-item/post-item.component';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 @NgModule({
@@ -64,7 +63,6 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     AngularFireDatabaseModule,
     AngularFireStorageModule,
     ReactiveFormsModule,
-    MatProgressBarModule,
     ToastrModule.forRoot({preventDuplicates:true})
   ],
   providers: [],

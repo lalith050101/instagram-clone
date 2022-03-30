@@ -50,7 +50,7 @@ export class ProfileComponent implements OnInit {
   }
 
   loadThumbnail(url:string){
-    return url+'#t=20';
+    return url+'#t=2';
   }
 
   showPost(postId:string){
