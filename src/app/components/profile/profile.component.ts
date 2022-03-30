@@ -33,16 +33,7 @@ export class ProfileComponent implements OnInit {
   constructor(private userService: UserService  ,private postservice:PostService,private uploadService: FileUploadService,private toaster:ToastNotificationService) {
     this.getUser();
     this.userService.$authUser.subscribe((data) => {
-      console.log("getuser called");
-      console.log(this.authenticatedUser);
-      
-      
       this.authenticatedUser = data;
-      console.log("updated:");
-      
-      console.log(this.authenticatedUser);
-     
-      
     })
   }
 
@@ -127,10 +118,7 @@ export class ProfileComponent implements OnInit {
                 count=1;
               }
             this.isdisableok=false;
-
-            // this.userService.updateProfile(this.userService.getAuthUser().id);
             }
-            this.userService.updateProfile(this.userService.getAuthUser().id);
           },
           error => {
             console.log(error);

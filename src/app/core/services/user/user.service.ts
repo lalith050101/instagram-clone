@@ -81,8 +81,6 @@ export class UserService {
         if(data){
           console.log("update profile: " );
           console.log(data);
-          
-          
           localStorage.setItem('user', JSON.stringify(data));
           this._authUser.next(data);
         }    

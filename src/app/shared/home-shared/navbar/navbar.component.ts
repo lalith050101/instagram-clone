@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/core/interfaces/user/user';
 import { PostService } from 'src/app/core/services/post/post.service';
+import { UserService } from 'src/app/core/services/user/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +11,11 @@ import { PostService } from 'src/app/core/services/post/post.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private postservice:PostService,private router:Router) { }
+  constructor(private postservice:PostService,private router:Router,private userService:UserService) {
+    this.userService.$authUser.subscribe((data) => {
+      this.authenticatedUser = data;
+    })
+   }
   authenticatedUser: User={} as User;
   home: string = "assets/Images/home3.png";
   chat: string = "assets/Images/emptychat.png";

@@ -27,9 +27,9 @@ export class FileUploadService {
     uploadTask.snapshotChanges().pipe(
       finalize(() => {
         storageRef.getDownloadURL().subscribe(downloadURL => {
-          // fileUpload.url = downloadURL;
-          // fileUpload.name = fileUpload.file.name;
-          if( type === 'profile') this.userService.uploadProfilePic( userId, downloadURL).subscribe();
+          if( type === 'profile') this.userService.uploadProfilePic( userId, downloadURL).subscribe(res=>{
+            this.userService.updateProfile(this.userService.getAuthUser().id);
+          });
           else if( type === 'post' && caption) this.postService.createPost({userId,caption, url: downloadURL, timeStamp: new Date() }).subscribe();
         });
       })
