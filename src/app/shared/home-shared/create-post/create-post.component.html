@@ -39,8 +39,8 @@
             <div class="upload-conatiner">
 
                 <div class="upload-header">
-                    <p><i class="fa-solid fa-arrow-left-long"></i></p>
-                    <p>Create new post</p>
+                    <span><i class="fa-solid fa-arrow-left-long"></i></span>
+                    <span>Create new post</span>
                     <button class="share" [disabled]="isdisableShare" (click)="upload()">Share</button>
                 </div>
                 
@@ -57,7 +57,7 @@
                 
                         <div class="profile-header">
                            <img src="/assets/Images/profile.PNG">
-                           <p>{{authenticatedUser.username}}</p>
+                           <span>{{authenticatedUser.username}}</span>
                         </div>
                 
                         <div class="comment">
@@ -66,7 +66,7 @@
                 
                         <div class="emoji-section">
                             <p class="emoji"><i class="fa-regular fa-face-smile"></i></p>
-                            <p class="comment-length">{{length}}<span>/2,200</span></p>
+                            <span class="comment-length">{{length}}<span>/2,200</span></span>
                         </div>
                 
                         <div class="footer">

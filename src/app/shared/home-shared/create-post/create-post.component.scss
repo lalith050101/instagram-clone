@@ -32,9 +32,9 @@
       cursor:default;
   }
   .close-overlay{
-      display: flex;
-      justify-content: flex-end;
-      margin: 15px;
+      position: absolute;
+      top:10px;
+      right: 20px;
       color: #fff;
       font-size: 40px;
       cursor: pointer;
@@ -84,6 +84,7 @@
         left: 0;
         top: 0;
         opacity: 0;
+        z-index: 10;
       }
     }
     .choose-heading{
@@ -119,6 +120,8 @@
       margin-right:10px ;
       color: #231F20;
       margin-top: 7px;
+      margin-bottom: 12px;
+      align-items: center;
   }
   
   .upload-header{
@@ -161,7 +164,7 @@
   .upload-img-container {
     float: left;
     width:55%;
-    height:437px;
+    height:442px;
     margin-top: -17px;
     border-radius: 15px;
   }
@@ -197,7 +200,10 @@
     }
   }
   .profile-header {
-    p{
+    span{
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
       margin: 7px;
     }
     
@@ -218,12 +224,17 @@
       overflow-x: hidden;
     }
     textarea::placeholder{
-      font-size: 18px;
+      color: #757575;
+
+      font-size: 16px;
     }
   }
   .comment-length{
     color:#dbdbdb;
     font-size: 15px;
+  }
+  .comment-length:hover{
+    color:black;
   }
   
   .emoji-section{
@@ -255,7 +266,7 @@
     }
     input::placeholder{
       margin-left: 30px;
-      font-size: 20px;
+      font-size: 16px;
     }
   }
   
@@ -551,4 +562,8 @@
     }
   }
 
+
+button:disabled {
+  color: #169EF7;
+}
  
