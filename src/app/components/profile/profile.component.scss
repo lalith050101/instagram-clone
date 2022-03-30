@@ -9,8 +9,6 @@ $fontWeight : 550;
 {
     margin-left: 15px;
 }
-
-
 #followlist
  {
      display: none;
@@ -34,13 +32,14 @@ $fontWeight : 550;
 }
 #editprofile
 {
-    width: 100%;
-    padding: 4px 9px;
+    width: 130px;
+    padding: 7px 9px;
     border: 1px solid gainsboro;
     font-weight: 600;
     font-size: 14px;
-    margin-top: 10px;
+    margin-top: 6px;
     cursor: pointer;
+    width: 130px;
 }
 #settings
 {
@@ -245,7 +244,7 @@ select{
 
 #highlight .list-inline .list-inline-item
 {
-    margin-right: 40px;
+    margin-right: 37px;
 }
 
 #highlight .list-inline .list-inline-item p
@@ -544,14 +543,14 @@ background-color: rgba($color: #000000, $alpha:1.0);
     margin-top: 5px;
     width:100px;
     height: 40px;
+    margin-left: -10px;
     cursor: pointer;
     margin-right: -20px;
     }
 
     #settings
     {
-        display: none;
-        margin-left: 20px;
+        margin-left: 5px;
     }
 
    .bio 
@@ -761,14 +760,15 @@ background-color: rgba($color: #000000, $alpha:1.0);
         font-size: 14px;
         margin-top: 5px;
         margin-left: 10px;
-        width:120px;
+        width:110px;
         height: 40px;
         cursor: pointer;
+        margin-left: -20px;
         }
 
     #settings
     {
-        margin-left: 80px;
+        width:30px;
     }
     #profile 
     {
@@ -776,6 +776,13 @@ background-color: rgba($color: #000000, $alpha:1.0);
         height:90px;
 
     }
+}
+
+@media only screen and (min-width:575px) and (max-width:684px){
+   #settings 
+   {
+       display: none;
+   }
 }
 
 //**************************End of media queries ****************************************
