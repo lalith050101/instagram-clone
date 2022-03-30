@@ -15,7 +15,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeSharedModule } from './shared/home-shared/home-shared.module';
 
-
 import { ExploreComponent } from './main/explore/explore.component';
 
 import { HomeComponentComponent } from './main/home/home-component/home-component.component';
@@ -30,6 +29,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ToastrModule } from 'ngx-toastr';
 import { StoryViewComponent } from './main/story-view/story-view.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,7 @@ import { StoryViewComponent } from './main/story-view/story-view.component';
     FooterComponent,
     LoginComponent,
     ProfileComponent,
-    StoryViewComponent
+    StoryViewComponent,
   ],
 
   imports: [
@@ -59,7 +59,8 @@ import { StoryViewComponent } from './main/story-view/story-view.component';
     AngularFireDatabaseModule,
     AngularFireStorageModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot({preventDuplicates:true})
+    MatProgressBarModule,
+    ToastrModule.forRoot({preventDuplicates:true}), 
   ],
   providers: [],
   bootstrap: [AppComponent]
