@@ -216,6 +216,32 @@ export class PostService {
       url = url.split('?')[0];
       return /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url);
     }
+
+
+    homeProfilePosts( userId: string) : Observable<any> {
+      return this.http.get( this.baseURL+'posts.json' ).pipe(
+        map( (data: any) => {          
+          let posts: Post[] = [];
+          Object.keys(data).forEach( key => {
+            let temp: Post = {
+              postId: key,
+              userId: data[key].userId,
+              url: data[key].url,
+              caption: data[key].caption,
+              timeStamp: data[key].timeStamp,
+              likes: data[key].like,
+              comments: data[key].comments
+            }
+            if(userId !== data[key].userId) {
+                posts.push(temp);
+            }
+          });
+          return posts;
+        })
+      );
+      }
+
+
   }
 
   

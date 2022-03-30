@@ -60,4 +60,8 @@ export class UserService {
     return this.http.patch(`${this.baseURL}/users/${userId}.json`, { profile: url  });
   }
 
+  getAuthUser() {
+    return JSON.parse(localStorage.getItem('user')!);
+  }
+
 }

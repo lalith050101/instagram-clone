@@ -1,5 +1,9 @@
 .navbar{
     background-color: white;
+    // overflow: hidden;
+    position: fixed;
+    width: 100%;
+    
 }
 .logo-img{
     width: 110px;
@@ -94,6 +98,7 @@ input[type]::placeholder{
    border: none;
    font-size: 14px;
    position: relative;
+   z-index: 999;
    
 }
 .dropdown-menu2 a 
