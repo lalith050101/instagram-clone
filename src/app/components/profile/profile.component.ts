@@ -58,7 +58,7 @@ export class ProfileComponent implements OnInit {
     console.log(this.authenticatedUser.id);
     
     this.postservice.viewProfilePosts(this.authenticatedUser.id).subscribe((data)=>{
-       this.postDetails=data;
+       this.postDetails=data.reverse();
        console.log(this.postDetails);
        
     })
