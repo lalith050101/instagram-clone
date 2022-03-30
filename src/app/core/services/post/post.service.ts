@@ -124,7 +124,7 @@ export class PostService {
   viewProfilePosts( userId?: string) : Observable<any> {
     return this.http.get( this.baseURL+'posts.json' ).pipe(
       map( (data: any) => {
-        console.log(data);
+        console.log(userId);
         
         let posts: PostHover[] = [];
         Object.keys(data).forEach( key => {
@@ -136,6 +136,7 @@ export class PostService {
           }
           if( userId) {
             if(userId === data[key].userId) {
+              console.log(data[key].userId,userId);
               posts.push(temp);
             }
           } else {

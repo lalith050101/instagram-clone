@@ -31,9 +31,12 @@ export class ProfileComponent implements OnInit {
   selected:string='';
   
   constructor(private userService: UserService  ,private postservice:PostService,private uploadService: FileUploadService,private toaster:ToastNotificationService) {
+    
+    this.authenticatedUser = this.userService.getAuthUser();
     this.getUser();
     this.userService.$authUser.subscribe((data) => {
       this.authenticatedUser = data;
+     
     })
   }
 
