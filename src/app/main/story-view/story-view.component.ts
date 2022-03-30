@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { interval, Subject } from 'rxjs';
+import { UserService } from 'src/app/core/services/user/user.service';
 
 @Component({
   selector: 'app-story-view',

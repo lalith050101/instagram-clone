@@ -54,9 +54,14 @@
 .sp-bw-comp{
     justify-content: space-between;
 }
-#post{
+#image-post{
     width:100%;
     aspect-ratio: 1/1.1;
+    object-fit: cover;
+}
+#video-post{
+    width:100%;
+    aspect-ratio:1/1.2;
     object-fit: cover;
 }
 #post-button{

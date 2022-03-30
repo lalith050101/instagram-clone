@@ -43,7 +43,7 @@ export class PostItemComponent implements OnInit {
 
 
   loadThumbnail(url: string) {
-    return url + '#t=20';
+    return url + '#t=2';
   }
 
   postView(postId: string) {
@@ -92,6 +92,13 @@ export class PostItemComponent implements OnInit {
     }
 
 
+  }
+
+  checkProfileUrl(url:any)
+  {
+    if(url!=null)
+      return url;
+    return "https://cdn-icons-png.flaticon.com/512/1946/1946429.png";
   }
 
 }
