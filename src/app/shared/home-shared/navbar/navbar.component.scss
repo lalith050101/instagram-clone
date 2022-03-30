@@ -79,7 +79,6 @@ input[type]::placeholder{
     width: 30px;
     height: 30px;
     border-radius: 50px;
-    border: 1px solid black;
     object-fit: cover;
 }
 
@@ -352,7 +351,6 @@ input[type]::placeholder{
     
     .navbar{
         border-bottom: 1px solid gainsboro;
-        height:50px;
     }
     
     #searchDiv 
@@ -545,7 +543,6 @@ input[type]::placeholder{
     
     .navbar{
         border-bottom: 1px solid gainsboro;
-        height:50px;
     }
     
     // #searchDiv 
@@ -747,3 +744,10 @@ input[type]::placeholder{
 }
 
   }
+
+  .dropdown-menu2,#navbarSupportedContent ul li a{
+    i, img 
+    {
+        cursor: pointer;
+    }
+}

@@ -4,6 +4,11 @@ $fontWeight : 550;
     padding-top: 28px;
     background-color: #f8f8f8;
 }
+#coverDesc
+{
+    margin-left: 15px;
+}
+
 
 #followlist
  {
@@ -17,14 +22,13 @@ $fontWeight : 550;
     border: 0px;
     margin-left: 5px;
     cursor: pointer;
-    object-fit: cover;
 }
 
 #heading 
 {
     font-size:29px;
     font-weight: lighter;
-    text-align: left;
+    margin-left: -5px;
 }
 #editprofile
 {
@@ -213,6 +217,7 @@ select{
   height: 80px;
   outline: 4px double gainsboro;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 #highlight p
@@ -237,9 +242,15 @@ select{
 
 #highlight .list-inline .list-inline-item
 {
-    margin-right: 47px;
+    margin-right: 40px;
 }
 
+#highlight .list-inline .list-inline-item p
+{
+   text-align: center;
+}
+
+//****************************************************************************************
 
 //media queries
 
@@ -255,6 +266,10 @@ select{
     {
         width: 80px;
         height: 80px;
+        border-radius: 50%;
+        border: 0px;
+        margin-left: 5px;
+        cursor: pointer;
     }
 
     #profileDiv #col5 
@@ -293,29 +308,53 @@ select{
         display: none;
     }
 
-    #highlight .list-inline-item img{
-        width: 50px;
-        height: 50px;
-     
-    }
+  //highlight
 
-    #highlight .list-inline-item {
-        margin-left: -25px;
-    }
+  
 
-    #highlight
-    {
-        margin-top: 5px;
-    }
+#highlight img{
+    width:50px;
+    height: 50px;
+    outline: 4px double gainsboro;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  #highlight p
+  {
+      width:64px;
+      font-size: 12px;
+      font-weight: $fontWeight;
+  }
+  
+  #new
+  {
+      font-size: 80px;
+      font-weight: lighter;
+  }
+  
+  #highlight
+  {
+      margin-top: 20px;
+  }
+  
+  #highlight .list-inline .list-inline-item
+  {
+      margin-right: 15px;
+  }
+  
+  #highlight .list-inline .list-inline-item p
+  {
+     text-align: center;
+     margin-left: -2px;
+  }
 
-    #highlight p
-    {
-        width: 40px;
-        font-size: 10px;
-        font-weight: $fontWeight;
-        margin-top: 7px;
-    }
-
+.demo
+{
+    font-size: 28px;
+    font-weight: $fontWeight;
+    color: #0095f6;
+}
     #word 
     {
         display: none;
@@ -464,8 +503,7 @@ background-color: rgba($color: #000000, $alpha:1.0);
 
 }
 
-
-
+/****************************************************************************************/
 
 //div2 
 @media only screen and (min-width:575px) and (max-width:1145px){
@@ -480,8 +518,11 @@ background-color: rgba($color: #000000, $alpha:1.0);
 
     #profile 
     {
-        width:100px;
-        width: 100px;
+        width:110px;
+        height: 110px;
+        border-radius: 50%;
+        border: 0px;
+        cursor: pointer;
     }
 
     #profileDiv #col5 
@@ -497,11 +538,16 @@ background-color: rgba($color: #000000, $alpha:1.0);
     font-weight: 600;
     font-size: 14px;
     overflow: hidden;
-    margin-right: 100px;
     margin-top: 5px;
-    width:auto;
-    height: 50px;
+    width:100px;
+    height: 40px;
     cursor: pointer;
+    margin-right: -20px;
+    }
+
+    #settings
+    {
+        margin-left: 20px;
     }
 
    .bio 
@@ -514,42 +560,52 @@ background-color: rgba($color: #000000, $alpha:1.0);
     }
     #heading 
     {
-
-        margin-left: -60px;
+        margin-left: -80px;
     }
     #followrow
     {
         display: none;
     }
 
-    #highlight .list-inline-item img{
-        width: 70px;
-        height: 70px;
-     
-    }
+    //highlight
 
-    #highlight .list-inline-item {
-        margin-left: -25px;
-    }
+  
 
-    #highlight
-    {
-        margin-top: 5px;
-    }
-
-    #highlight p
-    {
-        width: 40px;
-        font-size: 10px;
-        font-weight: $fontWeight;
-        margin-top: 7px;
-    }
-
-    // #word 
-    // {
-    //     display: none;
-    // }
-    
+#highlight img{
+    width:70px;
+    height: 70px;
+    outline: 4px double gainsboro;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  #highlight p
+  {
+      width:64px;
+      font-size: 12px;
+      font-weight: $fontWeight;
+  }
+  
+  #new
+  {
+      font-size: 80px;
+      font-weight: lighter;
+  }
+  
+  #highlight
+  {
+      margin-top: 20px;
+  }
+  
+  #highlight .list-inline .list-inline-item
+  {
+      margin-right: 25px;
+  }
+  
+  #highlight .list-inline .list-inline-item p
+  {
+     text-align: center;
+  }
     #myTab 
 {
     border: 0px;
@@ -700,18 +756,25 @@ background-color: rgba($color: #000000, $alpha:1.0);
         font-weight: 600;
         font-size: 14px;
         margin-top: 5px;
-        margin-left: 30px;
-        width: max-content;
+        margin-left: 10px;
+        width:120px;
+        height: 40px;
         cursor: pointer;
         }
 
     #settings
     {
-        display: none;
+        margin-left: 80px;
+    }
+    #profile 
+    {
+        width: 90px;
+        height:90px;
+
     }
 }
 
-
+//**************************End of media queries ****************************************
 
 //Upload Profile
 
