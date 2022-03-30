@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {PostForm} from "../../interfaces/post/post-form";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {FileUploadService} from "../media/file-upload.service";
 import {BehaviorSubject, Observable, Subject} from "rxjs";
 import { Comment } from "../../interfaces/react/comment";
@@ -28,7 +28,7 @@ export class PostService {
   $postid = this.postid.asObservable();
 
 
-  private baseURL: string = 'https://instagram-clone-ui-1f83e-default-rtdb.firebaseio.com/'
+  private baseURL: string = 'https://instagram-clone-e824c-default-rtdb.firebaseio.com/'
 
   constructor( private http: HttpClient) { }
 
@@ -70,6 +70,8 @@ export class PostService {
   likePost( like: Like): Observable<any> {
     return this.http.post( this.baseURL + 'likes.json', like).pipe(
       map((data) => {
+        console.log("userid: " + like.userId);
+        
         console.log('post return '+data);
         this.getPost(like.postId).subscribe( (data: Post) => {
           this.updateLikeCount(like.postId, data.likes+1).subscribe();
@@ -99,8 +101,10 @@ export class PostService {
     return this.http.patch(`${this.baseURL}posts/${postId}.json`, { comments: count });
   }
 
+   
+
   unlikePost( unlike: Like): Observable<any> {
-    return this.http.delete( `${this.baseURL}likes/${unlike.likeId}`).pipe(
+    return this.http.delete( `${this.baseURL}likes/${unlike.likeId}.json`).pipe(
       map((data) => {
         console.log('post return '+data);
         this.getPost(unlike.postId).subscribe( (data: Post) => {
@@ -169,20 +173,24 @@ export class PostService {
   getPostLikes(postId: string): Observable<any> {
     return this.http.get(`${this.baseURL}likes.json`).pipe(
       map((data: any) => {
-        let likes: Like[] = [];
-        Object.keys(data).forEach( key => {
+        if(data) {
+          let likes: Like[] = [];
+          Object.keys(data).forEach( key => {
 
-          if( postId === data[key].postId ) {
-            let temp: Like = {
-              likeId: key,
-              postId: data[key].postId,
-              userId: data[key].userId,
-              timeStamp: data[key].timeStamp
+            if( postId === data[key].postId ) {
+              let temp: Like = {
+                likeId: key,
+                postId: data[key].postId,
+                userId: data[key].userId,
+                timeStamp: data[key].timeStamp
+              }
+              likes.push(temp);
             }
-            likes.push(temp);
-          }
-        })
-        return likes;
+          })
+          return likes;
+      } else{
+        return [];
+      }
       })
     );
   }
@@ -190,8 +198,8 @@ export class PostService {
   userIsLiked( userId: string, postId: string): Observable<any> {
     return this.getPostLikes(postId).pipe(
       map((likes: Like[] ) => {
-        let index = likes.findIndex( (like: Like) => like.userId === userId);
-        return index === -1;
+        return likes.find( (like: Like) => like.userId === userId);
+        
       })
     );
   }
@@ -229,7 +237,7 @@ export class PostService {
               url: data[key].url,
               caption: data[key].caption,
               timeStamp: data[key].timeStamp,
-              likes: data[key].like,
+              likes: data[key].likes,
               comments: data[key].comments
             }
             if(userId !== data[key].userId) {

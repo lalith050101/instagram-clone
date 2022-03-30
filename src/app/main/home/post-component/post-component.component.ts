@@ -11,8 +11,8 @@ import { UserService } from 'src/app/core/services/user/user.service';
 })
 export class PostComponentComponent implements OnInit {
 
-  isdisablePause: boolean=false;
-  ispostoption:boolean=false;
+  
+  
 
   constructor(private postservice:PostService,private userService: UserService, private http: HttpClient) { }
 
@@ -20,47 +20,33 @@ export class PostComponentComponent implements OnInit {
 
   ngOnInit(): void {
     this.postservice.homeProfilePosts(this.userService.getAuthUser().id).subscribe(data => {
-      console.log(data);
+      console.log("pp" + data);
+      
       this.posts = data;
       this.posts.forEach((post:Post) => {
         this.userService.getUserWithId(post.userId).subscribe( (user) => {
           post.username = user.username;
           post.profileLink = user.profile;
+          // if(post.likes!=0)
+          // this.postservice.userIsLiked(this.userService.getAuthUser().userId, post.postId).subscribe((like) => {
+          //   if(like!=undefined){
+          //     post.isLiked = true;
+          //     post.liked = like;
+          //   }
+          //   else{
+          //     post.isLiked = false;
+          //   }
+          // })
         })
     })
   })
   }
 
 
-  postView(postId:string){    
-    this.postservice.viewPost(postId);
-  }
 
-  postOptions(){
-    this.ispostoption=true;
-  }
+ 
 
-  closeOption(){
-    this.ispostoption=false;
-  }
 
-  isImage(url: string) {
-    return this.postservice.isImage(url);
-  }
-
-  togglePlay(){
-    if(this.isdisablePause){
-      this.isdisablePause=false;
-      console.log(this.isdisablePause);
-    }else if(this.isdisablePause==false){
-     this.isdisablePause=true;
-      console.log(this.isdisablePause);
-    }
- }
-
- loadThumbnail(url:string){
-  return url+'#t=20';
-}
 
 
 }

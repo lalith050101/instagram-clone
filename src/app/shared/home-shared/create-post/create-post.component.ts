@@ -34,7 +34,11 @@ export class CreatePostComponent implements OnInit {
     this.disableupload=true;
     this.disablechoose=true;
     this.authenticatedUser=JSON.parse(localStorage.getItem('user')!);
-    console.log(this.authenticatedUser);
+    if(this.authenticatedUser.profile==null)
+    {
+      console.log("Empty profile");
+      this.authenticatedUser.profile="https://cdn-icons-png.flaticon.com/512/1946/1946429.png";
+    }
     
   }
 

@@ -1,4 +1,5 @@
 import {Comment} from "../react/comment";
+import { Like } from "../react/like";
 
 export interface Post {
   postId: string;
@@ -10,4 +11,6 @@ export interface Post {
   likes: number;
   comments: number;
   profileLink?: string;
+  liked?: Like;
+  isLiked?: boolean;
 }
