@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Post } from 'src/app/core/interfaces/post/post';
 import { PostService } from 'src/app/core/services/post/post.service';
+import { UserService } from 'src/app/core/services/user/user.service';
 
 @Component({
   selector: 'app-post-component',
@@ -13,20 +14,26 @@ export class PostComponentComponent implements OnInit {
   isdisablePause: boolean=false;
   ispostoption:boolean=false;
 
-  constructor(private postservice:PostService, private http: HttpClient) { }
+  constructor(private postservice:PostService,private userService: UserService, private http: HttpClient) { }
 
   posts: Post[] = [];
 
   ngOnInit(): void {
-    this.http.get<Post[]>("assets/static-data/posts.json").subscribe(data => {
+    this.postservice.homeProfilePosts(this.userService.getAuthUser().id).subscribe(data => {
       console.log(data);
       this.posts = data;
+      this.posts.forEach((post:Post) => {
+        this.userService.getUserWithId(post.userId).subscribe( (user) => {
+          post.username = user.username;
+          post.profileLink = user.profile;
+        })
     })
+  })
   }
 
 
   postView(postId:string){    
-    this.postservice.showPost(postId);
+    this.postservice.viewPost(postId);
   }
 
   postOptions(){
@@ -50,4 +57,10 @@ export class PostComponentComponent implements OnInit {
       console.log(this.isdisablePause);
     }
  }
+
+ loadThumbnail(url:string){
+  return url+'#t=20';
+}
+
+
 }

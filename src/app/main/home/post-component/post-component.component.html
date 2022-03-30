@@ -6,7 +6,7 @@
             <div class="page-dp">
                 <div class="gradient-background">
                     <div class="white-background">
-                        <img src="https://www.cricketkeeda.com/wp-content/uploads/2020/03/if-IPL-get-cancelled-then-ms-dhoni-will-play-in-t20-world-cup-640x640.jpg" alt="">
+                        <img src={{post.profileLink}} alt="">
                     </div>
                 </div>   
             </div>
@@ -20,7 +20,7 @@
         <div class="post-image">
             <img src={{post.url}} alt="post img" id="post" *ngIf="isImage(post.url) && post.url" >
             <video *ngIf="!isImage(post.url) && post.url" controls >
-                <source src={{post.url}} alt="post video" autoplay muted  (click)="togglePlay()" >
+                <source src={{loadThumbnail(post.url)}} alt="post video" autoplay muted="muted"  (click)="togglePlay()" >
             </video>
                
         </div>

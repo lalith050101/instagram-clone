@@ -1,6 +1,7 @@
 $fontWeight : 550;
 #profileDiv,footer
 {
+    margin-top: 50px;
     padding-top: 28px;
     background-color: #f8f8f8;
 }
@@ -32,6 +33,7 @@ $fontWeight : 550;
 }
 #editprofile
 {
+    width: 100%;
     padding: 4px 9px;
     border: 1px solid gainsboro;
     font-weight: 600;
@@ -547,6 +549,7 @@ background-color: rgba($color: #000000, $alpha:1.0);
 
     #settings
     {
+        display: none;
         margin-left: 20px;
     }
 

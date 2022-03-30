@@ -1,10 +1,16 @@
 carousel{
     z-index: 2;
 }
+.username {
+    font-weight: 300;
+    font-size: x-small;
+    margin: 3px;
+}
 .carousel-cell{
     display:flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
 }
 
     .gradient-background,.white-background{
@@ -12,6 +18,7 @@ carousel{
         justify-content: center;
         align-items: center;
         border-radius: 200px;
+        
     }
     .gradient-background{
         height:52px;
