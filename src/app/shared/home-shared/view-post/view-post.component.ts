@@ -207,7 +207,6 @@ export class ViewPostComponent implements OnInit {
       }
     }
     else {
-      alert("changelike");
       console.log("userid in comp: " + this.userService.getAuthUser().id);
       this.postservice.likePost({
         userId: this.userService.getAuthUser().id,
