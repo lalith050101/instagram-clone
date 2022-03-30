@@ -1,3 +1,12 @@
+.story-view__container{
+  height:100%;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  background-color: #1A1A1A;
+  margin: 0px;
+  padding:0px;
+}
 
   .instagram-stories__page {
     position: relative;
@@ -6,7 +15,6 @@
     height: calc(100% - 50px);
     width: 500px;
     transform-style: preserve-3d;
-    margin: 0px 10px;
   }
   
   .cub {
@@ -48,7 +56,7 @@
   .instagram-stories__storie {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     height: 100%;
     width: 100%;
     user-select: none;
@@ -131,7 +139,7 @@
     margin-right: 2px;
   }
   
-  .instagram-stories__btn-next, .instagram-stories__btn-prev {
+  .instagram-stories__btn-next, .instagram-stories__btn-prev,.close-button{
     position: absolute;
     display: flex;
     justify-content: center;
@@ -148,7 +156,19 @@
     cursor: pointer;
     outline: none;
   }
-  
+  .insta-logo{
+    position: absolute;
+    top:10px;
+    left:10px;
+  }
+  .close-button{
+    top:10px;
+    right:10px;
+    color:white;
+    font-size: xx-large;
+    border:none;
+    background-color: transparent;
+  }
   .instagram-stories__btn-next {
     top: calc(50% - 15px);
     right: -150px;

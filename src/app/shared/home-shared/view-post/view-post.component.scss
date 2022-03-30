@@ -57,9 +57,9 @@
 
 
 .close-overlay{
-  display: flex;
-  justify-content: flex-end;
-  margin: 15px;
+  position: absolute;
+  top:10px;
+  right: 20px;
   color: #fff;
   font-size: 35px;
   cursor: pointer;

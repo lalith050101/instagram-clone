@@ -7,6 +7,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ExploreComponent } from './main/explore/explore.component';
 import { HomeComponentComponent } from './main/home/home-component/home-component.component';
 import { MessagesComponent } from './components/messages/messages.component';
+import { StoryViewComponent } from './main/story-view/story-view.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'}, 
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'profile',component:ProfileComponent},
   {path:'explore',component:ExploreComponent},
   { path: 'logout', redirectTo: 'login', pathMatch: 'full'}, 
-  { path: 'message', component: MessagesComponent}
+  { path: 'message', component: MessagesComponent},
+  {path:'stories',component:StoryViewComponent},
 ];
 
 @NgModule({
