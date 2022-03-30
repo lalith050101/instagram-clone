@@ -26,10 +26,11 @@ export class ExploreComponent implements OnInit {
   }
 
   loadThumbnail(url:string){
-    return url+'#t=20';
+    return url+'#t=2';
   }
 
   ngOnInit(): void {
+    this.postDetails = this.shuffleArray();
   }
   showPost(postId:string){
     // console.log("inside show post");
@@ -47,6 +48,13 @@ export class ExploreComponent implements OnInit {
       return "video-container";  
     }
     return "image-container"
+  }
+
+  shuffleArray(){
+  return  this.postDetails
+  .map(value => ({ value, sort: Math.random() }))
+  .sort((a, b) => a.sort - b.sort)
+  .map(({ value }) => value)
   }
 
   // changeStyleForClass(className:string,position:number)
