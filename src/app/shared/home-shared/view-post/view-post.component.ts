@@ -56,7 +56,9 @@ export class ViewPostComponent implements OnInit {
         this.userService.getUserWithId(this.post.userId).subscribe((user) => {
           
           this.post.username = user.username;
-          this.post.profileLink = user.profileLink;
+          this.post.profileLink = user.profile;
+          
+          
           
         })
        

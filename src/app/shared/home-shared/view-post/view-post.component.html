@@ -37,20 +37,17 @@
                       
                           <div class="comment-container">
                               <div class="user-img">
-                                <img src="../../../../assets/Images/profile.PNG" > 
+                                <img src={{checkProfileUrl(post.profileLink)}} > 
                               </div>
                               <div class="other-content">
-                                <span class="username">vaish_sk</span>
-                                <span class="comment">hahahhahahaha like the prince like the prince 😂😂😂</span>
+                                <span class="username">{{post.username}}</span>
+                                <span class="comment">{{post.caption}}</span>
                                 <p class="tlr">
                                   <span>1d</span>
-                                  <span>15 likes</span>
-                                  <span>Reply</span>
+                                  
                                 </p>
                               </div>
-                              <div class="heart">
-                                <i class="fa-regular fa-heart"></i>
-                              </div>
+                             
                           </div>
 
                           <div class="comment-container">
