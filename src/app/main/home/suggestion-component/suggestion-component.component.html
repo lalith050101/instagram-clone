@@ -3,13 +3,13 @@
         <div class="dp-section">
             <div class="gradient-background">
                 <div class="white-background">
-                    <img src="https://qph.fs.quoracdn.net/main-qimg-c08442f3d73a6e6b33f7ea892ce16f21-lq" alt="">
+                    <img src={{checkProfileUrl(authenticatedUser.profile)}} alt="">
                 </div>
             </div>  
         </div>
         <div class=" info-section column-container">
-            <span class="user-id dark bold">eren_yaegar</span>
-            <span class="user-name">Eren Yaegar</span>
+            <span class="user-id dark bold">{{authenticatedUser.username}}</span>
+            <span class="user-name">{{authenticatedUser.name}}</span>
         </div>
         <div class="switch-account-section">
             <button id="switch-button">Switch</button>

@@ -32,13 +32,12 @@ export class ViewPostComponent implements OnInit {
   
 
   video = document.querySelector('video');
+
   constructor(private postservice:PostService, private userService: UserService) {
     this.viewPost();
-    this.postservice.$postid.subscribe((data)=>{
-      this.postId=data
-      
-      this.getPost(this.postId);  
-    })
+    console.log("constructor of view post");
+    
+    
     
   }
   getPost(postId: string) {
@@ -105,6 +104,13 @@ export class ViewPostComponent implements OnInit {
   ngOnInit(): void {
     this.isdisablepostview=true;
     this.checkFormat();    
+
+
+    this.postservice.$postid.subscribe((data)=>{
+      this.postId=data
+      
+      this.getPost(this.postId);  
+    })
    
     
   }

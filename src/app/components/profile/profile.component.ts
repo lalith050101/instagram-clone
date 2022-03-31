@@ -54,7 +54,7 @@ export class ProfileComponent implements OnInit {
   }
 
   showPost(postId:string){
-    // console.log("inside show post");
+    console.log("inside show post");
     
     console.log(postId);
     

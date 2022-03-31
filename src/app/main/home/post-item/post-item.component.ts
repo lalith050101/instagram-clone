@@ -74,6 +74,7 @@ export class PostItemComponent implements OnInit {
           console.log("unliked");
           
           this.likeStatus = false;
+          this.post.likes -= 1;
         },
         (error)=>{console.log("unlike err"+error);
         }
@@ -88,6 +89,7 @@ export class PostItemComponent implements OnInit {
         timeStamp: new Date()
       }).subscribe((data) => {
         this.likeStatus = true;
+        this.post.likes += 1;
       });
 
       this.postService.userIsLiked(this.userService.getAuthUser().id, this.post.postId).subscribe((data) => {
@@ -97,6 +99,7 @@ export class PostItemComponent implements OnInit {
         this.likeStatus = data ? true : false;
         if (this.likeStatus)
           this.like = data;
+        
       })
     }
 
