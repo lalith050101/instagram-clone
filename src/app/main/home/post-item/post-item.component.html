@@ -8,7 +8,7 @@
             </div>   
         </div>
         <div class="page-name bold-small">
-            {{post.username}} <br/><span>{{post.caption}}</span>
+            {{post.username}} <br/><span>India</span>
         </div>
         <div class="dot">
             <p style="cursor: pointer;" class="flex-dot" (click)="postOptions()">...</p>
@@ -43,10 +43,10 @@
         Liked by
         <p class="liked-profile bold-small"> CoderZ</p>
         and
-        <p class="like-count bold-small"> 12,253 others</p>
+        <p class="like-count bold-small"> {{post.likes}} others</p>
     </div>
     <div class="desc-section small follow-name">
-        <span class="bold-small page-name">mokapostu</span>😎
+        <span class="bold-small page-name">{{post.username}}</span>{{post.caption}}
     </div>
     <div class="comment-section">
         View all 35 comments

@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-2" id="col2" >
-            <img (click)="showchooseProfile()" src="{{authenticatedUser.profile}}" alt="profileicon" id="profile">
+            <img (click)="showchooseProfile()" src="{{checkProfileUrl(authenticatedUser.profile)}}" alt="profileicon" id="profile">
         </div>
      
         <div class="col-sm-5" id="col5">
@@ -415,7 +415,7 @@
         <div class="chooseProfile-conatiner">
 
             <div class="chooseProfile-header">
-                <img src="{{authenticatedUser.profile}}" class="chooseProfile-photo">
+                <img src="{{checkProfileUrl(authenticatedUser.profile)}}" class="chooseProfile-photo">
                 <p class="head">Synced Profile Photo</p>
                 <p class="content">Instagram, Facebook</p>
             </div>

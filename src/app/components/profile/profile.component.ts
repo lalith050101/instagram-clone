@@ -54,7 +54,7 @@ export class ProfileComponent implements OnInit {
   }
 
   showPost(postId:string){
-    // console.log("inside show post");
+    console.log("inside show post");
     
     console.log(postId);
     
@@ -132,4 +132,11 @@ export class ProfileComponent implements OnInit {
     }
   }
 
+
+  checkProfileUrl(url:any)
+  {
+    if(url!=null)
+      return url;
+    return "https://cdn-icons-png.flaticon.com/512/1946/1946429.png";
+  }
 }

@@ -18,7 +18,10 @@ export class ExploreComponent implements OnInit {
   }
 
   getExplorePosts(){
-    this.postservice.getAllPosts().subscribe(res=>this.postDetails=res);
+    this.postservice.getAllPosts().subscribe(res=>{
+      this.postDetails=res;
+      this.postDetails = this.shuffleArray();
+    });
   }
 
   isImage(url: string) {
@@ -30,10 +33,8 @@ export class ExploreComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.postDetails = this.shuffleArray();
   }
   showPost(postId:string){
-    // console.log("inside show post");
     
     console.log(postId);
     

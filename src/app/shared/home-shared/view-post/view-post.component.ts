@@ -32,13 +32,12 @@ export class ViewPostComponent implements OnInit {
   
 
   video = document.querySelector('video');
+
   constructor(private postservice:PostService, private userService: UserService) {
     this.viewPost();
-    this.postservice.$postid.subscribe((data)=>{
-      this.postId=data
-      
-      this.getPost(this.postId);  
-    })
+    console.log("constructor of view post");
+    
+    
     
   }
   getPost(postId: string) {
@@ -48,15 +47,17 @@ export class ViewPostComponent implements OnInit {
     
       this.postservice.getPost(postId).subscribe((data)=>{     
         this.post=data;
-        
-        
+        console.log("data");
+        console.log(data);
         
         console.log(this.post.userId);
         
         this.userService.getUserWithId(this.post.userId).subscribe((user) => {
           
           this.post.username = user.username;
-          this.post.profileLink = user.profileLink;
+          this.post.profileLink = user.profile;
+          
+          
           
         })
        
@@ -75,7 +76,7 @@ export class ViewPostComponent implements OnInit {
         this.postservice.userIsLiked(this.userService.getAuthUser().id, postId).subscribe((data) => {
           console.log("like status: " + data);
 
-          this.likeStatus = data.liked ? true : false;
+          // this.likeStatus = data.liked ? true : false;
           this.likeStatus = data ? true : false;
           if (this.likeStatus)
             this.like = data;
@@ -103,6 +104,13 @@ export class ViewPostComponent implements OnInit {
   ngOnInit(): void {
     this.isdisablepostview=true;
     this.checkFormat();    
+
+
+    this.postservice.$postid.subscribe((data)=>{
+      this.postId=data
+      
+      this.getPost(this.postId);  
+    })
    
     
   }
@@ -208,6 +216,8 @@ export class ViewPostComponent implements OnInit {
     }
     else {
       console.log("userid in comp: " + this.userService.getAuthUser().id);
+      console.log("post id" + this.post.postId);
+      
       this.postservice.likePost({
         userId: this.userService.getAuthUser().id,
         postId: this.post.postId,
@@ -215,6 +225,17 @@ export class ViewPostComponent implements OnInit {
       }).subscribe((data) => {
         this.likeStatus = true;
       });
+
+
+      this.postservice.userIsLiked(this.userService.getAuthUser().id, this.postId).subscribe((data) => {
+        console.log("like status: " + data);
+
+        // this.likeStatus = data.liked ? true : false;
+        this.likeStatus = data ? true : false;
+        if (this.likeStatus)
+          this.like = data;
+      })
+
     }
   }
 

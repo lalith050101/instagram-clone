@@ -33,7 +33,14 @@ export class PostService {
   constructor( private http: HttpClient) { }
 
   getPost( postId: string): Observable<any> {
-    return this.http.get(`${this.baseURL}posts/${postId}.json`);
+    return this.http.get(`${this.baseURL}posts/${postId}.json`).pipe(
+      map((data:any) => {
+        if(data){
+          data.postId = postId;
+          return data;
+        }
+      })
+    );
   }
 
   getPostComments( postId: string): Observable<any> {
