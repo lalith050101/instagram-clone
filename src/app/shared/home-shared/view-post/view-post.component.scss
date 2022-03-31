@@ -114,12 +114,8 @@
 }
 
 .dot{
-  height: 3px;
-  width: 3px;
-  background-color: black;
-  border-radius: 50%;
-  display: inline-block;
-  margin-left:3px;
+  font-size: 14px;
+  font-weight: 600px;
 }
 .flex-dot{
   // display: flex;
@@ -161,7 +157,7 @@
     margin-left: 20px;
     .username{
       margin-right: 5px;
-      font-weight: 500;
+      font-weight: 550;
       font-size: 14px;
     }
     .comment{
@@ -194,6 +190,7 @@
   margin-top: 5px;
   font-size: 25px;
   display: flex;
+  flex-direction: row;
   .left{
     justify-content: flex-start;
     span{
@@ -470,3 +467,64 @@
     } 
 
   }
+
+
+
+  
+._8-yf5:hover {
+  opacity: 0.5;
+}
+
+.liked {
+  color: red;
+  // background-color: red;
+}
+
+.not-liked {
+  // color:white;
+  background-color: white;
+  // border: 1px solid black;
+}
+
+.like-button {
+  animation: increaseLike .5s ease-out 0s 1;
+}
+
+
+@keyframes increaseLike {
+  0% {
+      transform: scale(1.0);
+  }
+  
+  50% {
+      transform: scale(1.1);
+  }
+
+  
+  100% {
+      transform: scale(1.0);
+  }
+}
+
+
+.icon{
+  height:45px;
+  width:45px;
+  padding:10px;
+}
+.icon:hover{
+  cursor: pointer;
+}
+
+
+.row-container{
+  display:flex;
+  flex-direction: row;
+  overflow:hidden;
+  align-items: center;
+  align-content: center;
+}
+
+.sp-bw-comp{
+  justify-content: space-between;
+}

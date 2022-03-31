@@ -1,10 +1,14 @@
 .navbar{
     background-color: white;
+    // overflow: hidden;
+    position: fixed;
+    width: 100%;
+    
 }
 .logo-img{
     width: 110px;
     height: 30px;
-    margin-left: 30px;
+    margin-left: 10px;
 }
 
 .navbar{
@@ -83,7 +87,7 @@ input[type]::placeholder{
 }
 
 .navbar-collapse{
-    margin-left: 53px;
+    margin-left: 80px;
 }
 
 .dropdown-menu2
@@ -94,6 +98,7 @@ input[type]::placeholder{
    border: none;
    font-size: 14px;
    position: relative;
+   z-index: 999;
    
 }
 .dropdown-menu2 a 
@@ -405,7 +410,6 @@ input[type]::placeholder{
         height: 25px;
         border-radius: 50px;
         cursor: pointer;
-        border: 1px solid black;
     }
     
     .navbar-collapse{
@@ -625,7 +629,6 @@ input[type]::placeholder{
         height: 25px;
         border-radius: 50px;
         cursor: pointer;
-        border: 1px solid black;
     }
     
     .navbar-collapse{

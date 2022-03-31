@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Post } from 'src/app/core/interfaces/post/post';
 import { Comment } from 'src/app/core/interfaces/react/comment';
+import { Like } from 'src/app/core/interfaces/react/like';
 import { PostService } from 'src/app/core/services/post/post.service';
+import { UserService } from 'src/app/core/services/user/user.service';
 
 @Component({
   selector: 'app-view-post',
@@ -30,7 +32,7 @@ export class ViewPostComponent implements OnInit {
   
 
   video = document.querySelector('video');
-  constructor(private postservice:PostService) {
+  constructor(private postservice:PostService, private userService: UserService) {
     this.viewPost();
     this.postservice.$postid.subscribe((data)=>{
       this.postId=data
@@ -40,8 +42,23 @@ export class ViewPostComponent implements OnInit {
     
   }
   getPost(postId: string) {
-      this.postservice.getPost(this.postId).subscribe((data)=>{
+    console.log("getpost");
+    console.log(postId);
+    
+    
+      this.postservice.getPost(postId).subscribe((data)=>{     
         this.post=data;
+        
+        
+        
+        console.log(this.post.userId);
+        
+        this.userService.getUserWithId(this.post.userId).subscribe((user) => {
+          
+          this.post.username = user.username;
+          this.post.profileLink = user.profileLink;
+          
+        })
        
         if(this.postservice.isImage(this.post.url)){
           this.format='image';
@@ -50,6 +67,19 @@ export class ViewPostComponent implements OnInit {
           this.format='video';
         }
         this.url=this.post.url;
+        //here
+        console.log(this.userService.getAuthUser().id);
+        console.log(this.post.postId);
+        
+        
+        this.postservice.userIsLiked(this.userService.getAuthUser().id, postId).subscribe((data) => {
+          console.log("like status: " + data);
+
+          this.likeStatus = data.liked ? true : false;
+          this.likeStatus = data ? true : false;
+          if (this.likeStatus)
+            this.like = data;
+        })
     });
     
     this.postservice.getPostComments(this.postId).subscribe((data)=>{
@@ -72,7 +102,7 @@ export class ViewPostComponent implements OnInit {
 
   ngOnInit(): void {
     this.isdisablepostview=true;
-    this.checkFormat();
+    this.checkFormat();    
    
     
   }
@@ -148,6 +178,45 @@ export class ViewPostComponent implements OnInit {
     }
   };
 
-  
+
+  checkProfileUrl(url:any)
+  {
+    if(url!=null)
+      return url;
+    return "https://cdn-icons-png.flaticon.com/512/1946/1946429.png";
+  }
+
+
+  likeStatus: boolean = false;
+  like: Like = {} as Like;
+
+  changeLikeStatus() {
+    
+    if (this.likeStatus) {
+      console.log("unlike");
+      
+      if (this.like != undefined) {
+        this.postservice.unlikePost(this.like).subscribe((data) => {
+          console.log("unliked");
+          
+          this.likeStatus = false;
+        },
+        (error)=>{console.log("unlike err"+error);
+        }
+        );
+      }
+    }
+    else {
+      console.log("userid in comp: " + this.userService.getAuthUser().id);
+      this.postservice.likePost({
+        userId: this.userService.getAuthUser().id,
+        postId: this.post.postId,
+        timeStamp: new Date()
+      }).subscribe((data) => {
+        this.likeStatus = true;
+      });
+    }
+  }
+
       
 }

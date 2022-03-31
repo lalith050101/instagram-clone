@@ -30,6 +30,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ToastrModule } from 'ngx-toastr';
 import { StoryViewComponent } from './main/story-view/story-view.component';
 import { MessagesComponent } from './components/messages/messages.component';
+import { PostItemComponent } from './main/home/post-item/post-item.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { MessagesComponent } from './components/messages/messages.component';
     ProfileComponent,
     StoryViewComponent,
     MessagesComponent,
+    PostItemComponent,
   ],
 
   imports: [

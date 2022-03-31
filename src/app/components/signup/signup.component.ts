@@ -51,7 +51,9 @@ export class SignupComponent implements OnInit {
           () => {
             this.toasterService.showSuccess("Hello! You have Successfully Signed up","User Created Successfully");
             this.router.navigate(['/login']);            
-          } 
+          } ,
+          (error) => {console.log("getting error in" + error);
+          }
         )
       }
     })

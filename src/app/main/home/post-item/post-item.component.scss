@@ -54,9 +54,14 @@
 .sp-bw-comp{
     justify-content: space-between;
 }
-#post{
+#image-post{
     width:100%;
     aspect-ratio: 1/1.1;
+    object-fit: cover;
+}
+#video-post{
+    width:100%;
+    aspect-ratio:1/1.2;
     object-fit: cover;
 }
 #post-button{
@@ -188,7 +193,6 @@ margin:0px 5px;
     z-index: 9999;
     cursor: default;
     overflow: hidden;
-    opacity: 0.5;
 }  
 
 #option-section{
@@ -245,6 +249,33 @@ margin:0px 5px;
     opacity: 0.5;
 }
 
-.like-icon {
+.liked {
+    color: red;
+    // background-color: red;
+}
 
+.not-liked {
+    // color:white;
+    background-color: white;
+    // border: 1px solid black;
+}
+
+.like-button {
+    animation: increaseLike .5s ease-out 0s 1;
+}
+
+
+@keyframes increaseLike {
+    0% {
+        transform: scale(1.0);
+    }
+    
+    50% {
+        transform: scale(1.1);
+    }
+
+    
+    100% {
+        transform: scale(1.0);
+    }
 }

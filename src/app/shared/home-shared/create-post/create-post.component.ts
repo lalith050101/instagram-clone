@@ -4,6 +4,7 @@ import { FileUpload } from 'src/app/core/models/file-upload';
 import { FileUploadService } from 'src/app/core/services/media/file-upload.service';
 import { PostService } from 'src/app/core/services/post/post.service';
 import { ToastNotificationService } from 'src/app/core/services/toaster/toast-notification.service';
+import { UserService } from 'src/app/core/services/user/user.service';
 
 @Component({
   selector: 'app-create-post',
@@ -34,15 +35,21 @@ export class CreatePostComponent implements OnInit {
     this.disableupload=true;
     this.disablechoose=true;
     this.authenticatedUser=JSON.parse(localStorage.getItem('user')!);
-    console.log(this.authenticatedUser);
+    if(this.authenticatedUser.profile==null)
+    {
+      console.log("Empty profile");
+      this.authenticatedUser.profile="https://cdn-icons-png.flaticon.com/512/1946/1946429.png";
+    }
     
   }
 
 
     
-    constructor(private postservice:PostService,private uploadService: FileUploadService,private toaster:ToastNotificationService) {
+    constructor(private postservice:PostService,private userService:UserService,private uploadService: FileUploadService,private toaster:ToastNotificationService) {
       this.displaypost(); 
-
+      this.userService.$authUser.subscribe((data) => {
+        this.authenticatedUser = data;
+      })
     }
 
 

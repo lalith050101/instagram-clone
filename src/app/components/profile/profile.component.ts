@@ -30,10 +30,18 @@ export class ProfileComponent implements OnInit {
 
   selected:string='';
   
-  constructor(private userService: UserService  ,private postservice:PostService,private uploadService: FileUploadService,private toaster:ToastNotificationService) {}
+  constructor(private userService: UserService  ,private postservice:PostService,private uploadService: FileUploadService,private toaster:ToastNotificationService) {
+    
+    this.authenticatedUser = this.userService.getAuthUser();
+    this.getUser();
+    this.userService.$authUser.subscribe((data) => {
+      this.authenticatedUser = data;
+     
+    })
+  }
 
   ngOnInit(): void {
-    this.getUser();
+    this.userService.updateProfile(this.userService.getAuthUser().id);
     
   }
 
@@ -42,7 +50,7 @@ export class ProfileComponent implements OnInit {
   }
 
   loadThumbnail(url:string){
-    return url+'#t=20';
+    return url+'#t=2';
   }
 
   showPost(postId:string){
@@ -54,9 +62,8 @@ export class ProfileComponent implements OnInit {
     this.postservice.viewPost(postId);
   }
 
-  getUser() {
-    this.authenticatedUser=JSON.parse(localStorage.getItem('user')!);
-    console.log(this.authenticatedUser);
+  getUser() {  
+   
     if(this.authenticatedUser.profile==null)
     {
       console.log("Empty profile");
@@ -114,15 +121,6 @@ export class ProfileComponent implements OnInit {
                 count=1;
               }
             this.isdisableok=false;
-
-            this.userService.getUserWithUsername(this.authenticatedUser.username).subscribe((data) => {
-              console.log( "update photo get user" + data);
-              if(data){
-                this.authenticatedUser.profile =  data.profile;
-              }    
-              
-            })
-
             }
           },
           error => {
