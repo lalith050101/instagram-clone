@@ -1,5 +1,5 @@
 <div class="topmargin row">
-    <div class="col-lg-1 col-md-1"></div>
+    <div class="col-lg-1 col-md-3 col-sm-1"></div>
     <div class="leftanimation col-lg-5 col-md-2 col-sm-1">
         <img src="assets/Images/backgroundimg.png" class="background" width="468.32px" height="634.15px"/>
             <div class="mySlides fade">
@@ -15,7 +15,7 @@
                 <img src="assets/Images/scroller4.png" class="scroll">
             </div>
     </div>
-    <div class="col-lg-4 col-md-6 col-sm-10">
+    <div class="col-lg-4 col-md-6 col-sm-9">
         <div class="box1">
             <img src="assets/Images/instalogo.png" class="instalogo"/>
             <form class="form-group" [formGroup]="signin" (ngSubmit)="onSubmit()">
@@ -41,7 +41,7 @@
             <div class="forgot-password">Forgot password?</div>
         </div>
         <div class="display signup">
-            <p>Don't have an account?</p><a href="/">Sign up</a>
+            <p>Don't have an account?</p><a routerLink="/signup" >Sign up</a>
         </div>
         <div class="getapp">Get the app.</div>
         <div class="display app">

@@ -19,6 +19,7 @@ export class FileUploadService {
     private postService: PostService
   ) { }
 
+
   pushFileToStorage(fileUpload: FileUpload, userId: string, type: string, caption?: string): Observable<number | undefined> {
     const filePath = `${type}/${userId}/${fileUpload.file.name}`;
     const storageRef = this.storage.ref(filePath);
@@ -26,9 +27,9 @@ export class FileUploadService {
     uploadTask.snapshotChanges().pipe(
       finalize(() => {
         storageRef.getDownloadURL().subscribe(downloadURL => {
-          // fileUpload.url = downloadURL;
-          // fileUpload.name = fileUpload.file.name;
-          if( type === 'profile') this.userService.uploadProfilePic( userId, downloadURL).subscribe();
+          if( type === 'profile') this.userService.uploadProfilePic( userId, downloadURL).subscribe(res=>{
+            this.userService.updateProfile(this.userService.getAuthUser().id);
+          });
           else if( type === 'post' && caption) this.postService.createPost({userId,caption, url: downloadURL, timeStamp: new Date() }).subscribe();
         });
       })
@@ -57,4 +58,6 @@ export class FileUploadService {
     const storageRef = this.storage.ref(basePath);
     storageRef.child(name).delete();
   }
+
+  
 }
