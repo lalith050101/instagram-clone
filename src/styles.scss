@@ -1,5 +1,6 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    // font-family: Arial, Helvetica, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
   
   html, body {
@@ -10,6 +11,5 @@
     margin: 0px;
     padding: 0px;
     background-color: rgba(var(--b3f,250,250,250),1);
+    font-family: Roboto, "Helvetica Neue", sans-serif;
   }
-  @import url(story-style.scss);
-

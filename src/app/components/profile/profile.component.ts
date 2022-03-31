@@ -31,9 +31,12 @@ export class ProfileComponent implements OnInit {
   selected:string='';
   
   constructor(private userService: UserService  ,private postservice:PostService,private uploadService: FileUploadService,private toaster:ToastNotificationService) {
+    
+    this.authenticatedUser = this.userService.getAuthUser();
     this.getUser();
     this.userService.$authUser.subscribe((data) => {
       this.authenticatedUser = data;
+     
     })
   }
 
@@ -47,7 +50,7 @@ export class ProfileComponent implements OnInit {
   }
 
   loadThumbnail(url:string){
-    return url+'#t=20';
+    return url+'#t=2';
   }
 
   showPost(postId:string){
@@ -129,4 +132,11 @@ export class ProfileComponent implements OnInit {
     }
   }
 
+
+  checkProfileUrl(url:any)
+  {
+    if(url!=null)
+      return url;
+    return "https://cdn-icons-png.flaticon.com/512/1946/1946429.png";
+  }
 }

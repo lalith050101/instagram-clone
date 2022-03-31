@@ -252,7 +252,7 @@ select{
    text-align: center;
 }
 
-//****************************************************************************************
+//******************************
 
 //media queries
 
@@ -505,7 +505,7 @@ background-color: rgba($color: #000000, $alpha:1.0);
 
 }
 
-/****************************************************************************************/
+/******************************/
 
 //div2 
 @media only screen and (min-width:575px) and (max-width:1145px){
@@ -645,7 +645,7 @@ background-color: rgba($color: #000000, $alpha:1.0);
     padding-top: 15px;
    
 }
-.nav-link i , .nav-link img
+.nav-link i , .nav-link 
 {
     font-size: 12px;
     margin-right: 4px;
@@ -785,7 +785,7 @@ background-color: rgba($color: #000000, $alpha:1.0);
    }
 }
 
-//**************************End of media queries ****************************************
+//*********End of media queries ***************
 
 //Upload Profile
 

@@ -18,7 +18,10 @@ export class ExploreComponent implements OnInit {
   }
 
   getExplorePosts(){
-    this.postservice.getAllPosts().subscribe(res=>this.postDetails=res);
+    this.postservice.getAllPosts().subscribe(res=>{
+      this.postDetails=res;
+      this.postDetails = this.shuffleArray();
+    });
   }
 
   isImage(url: string) {
@@ -26,13 +29,12 @@ export class ExploreComponent implements OnInit {
   }
 
   loadThumbnail(url:string){
-    return url+'#t=20';
+    return url+'#t=2';
   }
 
   ngOnInit(): void {
   }
   showPost(postId:string){
-    // console.log("inside show post");
     
     console.log(postId);
     
@@ -47,6 +49,13 @@ export class ExploreComponent implements OnInit {
       return "video-container";  
     }
     return "image-container"
+  }
+
+  shuffleArray(){
+  return  this.postDetails
+  .map(value => ({ value, sort: Math.random() }))
+  .sort((a, b) => a.sort - b.sort)
+  .map(({ value }) => value)
   }
 
   // changeStyleForClass(className:string,position:number)
