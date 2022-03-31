@@ -22,14 +22,14 @@ import { PostComponentComponent } from './main/home/post-component/post-componen
 import { StoryComponentComponent } from './main/home/story-component/story-component.component';
 import { SuggestionComponentComponent } from './main/home/suggestion-component/suggestion-component.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
-import { SignupComponent } from './components/signup/signup.component';
+import { SignupComponent } from './main/app-module/signup/signup.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { FooterComponent } from './components/footer/footer.component';
-import { LoginComponent } from './components/login/login.component';
-import { ProfileComponent } from './components/profile/profile.component';
+import { FooterComponent } from './main/footer/footer.component';
+import { LoginComponent } from './main/app-module/login/login.component';
+import { ProfileComponent } from './main/profile/profile.component';
 import { ToastrModule } from 'ngx-toastr';
 import { StoryViewComponent } from './main/story-view/story-view.component';
-import { MessagesComponent } from './components/messages/messages.component';
+import { MessagesComponent } from './main/messages/messages.component';
 import { PostItemComponent } from './main/home/post-item/post-item.component';
 
 
