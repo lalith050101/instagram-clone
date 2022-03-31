@@ -89,6 +89,15 @@ export class PostItemComponent implements OnInit {
       }).subscribe((data) => {
         this.likeStatus = true;
       });
+
+      this.postService.userIsLiked(this.userService.getAuthUser().id, this.post.postId).subscribe((data) => {
+        console.log("like status: " + data);
+
+        // this.likeStatus = data.liked ? true : false;
+        this.likeStatus = data ? true : false;
+        if (this.likeStatus)
+          this.like = data;
+      })
     }
 
 

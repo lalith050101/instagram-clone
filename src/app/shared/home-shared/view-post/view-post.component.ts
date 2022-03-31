@@ -48,8 +48,8 @@ export class ViewPostComponent implements OnInit {
     
       this.postservice.getPost(postId).subscribe((data)=>{     
         this.post=data;
-        
-        
+        console.log("data");
+        console.log(data);
         
         console.log(this.post.userId);
         
@@ -77,7 +77,7 @@ export class ViewPostComponent implements OnInit {
         this.postservice.userIsLiked(this.userService.getAuthUser().id, postId).subscribe((data) => {
           console.log("like status: " + data);
 
-          this.likeStatus = data.liked ? true : false;
+          // this.likeStatus = data.liked ? true : false;
           this.likeStatus = data ? true : false;
           if (this.likeStatus)
             this.like = data;
@@ -210,6 +210,8 @@ export class ViewPostComponent implements OnInit {
     }
     else {
       console.log("userid in comp: " + this.userService.getAuthUser().id);
+      console.log("post id" + this.post.postId);
+      
       this.postservice.likePost({
         userId: this.userService.getAuthUser().id,
         postId: this.post.postId,
@@ -217,6 +219,17 @@ export class ViewPostComponent implements OnInit {
       }).subscribe((data) => {
         this.likeStatus = true;
       });
+
+
+      this.postservice.userIsLiked(this.userService.getAuthUser().id, this.postId).subscribe((data) => {
+        console.log("like status: " + data);
+
+        // this.likeStatus = data.liked ? true : false;
+        this.likeStatus = data ? true : false;
+        if (this.likeStatus)
+          this.like = data;
+      })
+
     }
   }
 
