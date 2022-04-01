@@ -33,7 +33,7 @@ export class StoryViewComponent implements OnInit {
       this.index++;
       if(!this.isLastPost())
       {
-        this.startTimer(20);
+        this.startTimer(5);
         this.storyImageElement.src = this.posts[this.index];
         this.progressbarValue = 0;
       }
@@ -45,7 +45,7 @@ export class StoryViewComponent implements OnInit {
 
     this.storyImageElement = document.getElementById("story-img") as HTMLImageElement;
     this.storyImageElement.src = this.posts[this.index];
-    this.startTimer(20);
+    this.startTimer(5);
     
   }
 
@@ -59,7 +59,7 @@ export class StoryViewComponent implements OnInit {
   startTimer(seconds: number) {
 
     const time = seconds;
-    const timer$ = interval(100);
+    const timer$ = interval(250);
 
     this.sub = timer$.subscribe((sec) => {
       
@@ -87,7 +87,7 @@ export class StoryViewComponent implements OnInit {
   {
     this.sub.unsubscribe();
     this.index--;
-    this.startTimer(20);
+    this.startTimer(5);
     this.progressbarValue = 0;
     if(this.index<0)
     {
@@ -106,7 +106,7 @@ export class StoryViewComponent implements OnInit {
       this.index = this.posts.length-1;
       this.progressbarValue = 100;
     }
-      this.startTimer(20);
+      this.startTimer(5);
       this.storyImageElement.src = this.posts[this.index];
   }
 }

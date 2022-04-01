@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './main/app-module/login/login.component';
 import { NavbarComponent } from './shared/home-shared/navbar/navbar.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { SignupComponent } from './components/signup/signup.component';
+import { ProfileComponent } from './main/profile/profile.component';
+import { SignupComponent } from './main/app-module/signup/signup.component';
 import { ExploreComponent } from './main/explore/explore.component';
 import { HomeComponentComponent } from './main/home/home-component/home-component.component';
-import { MessagesComponent } from './components/messages/messages.component';
+import { MessagesComponent } from './main/messages/messages.component';
 import { StoryViewComponent } from './main/story-view/story-view.component';
 
 const routes: Routes = [
